@@ -6,7 +6,6 @@ import {
   Server, Database, Shield, Terminal, 
   Activity, Play, CheckCircle2, ShieldAlert
 } from 'lucide-react';
-import './PhilosophyPage.css';
 
 export const PhilosophyPage: React.FC = () => {
   // Console Tab State
@@ -71,7 +70,6 @@ await onfixDb.transact({
 
   const currentTab = consoleTabs.find((t) => t.id === activeConsoleTab) || consoleTabs[0];
 
-  // Latency ping simulation handler
   const executePingTest = () => {
     if (pingStatus === 'testing') return;
     setPingStatus('testing');
@@ -94,7 +92,6 @@ await onfixDb.transact({
       });
     };
 
-    // Sequential ping tests
     runPing('colombo', 400, 12, 4)
       .then(() => runPing('singapore', 500, 42, 6))
       .then(() => runPing('tokyo', 600, 75, 10))
@@ -107,53 +104,55 @@ await onfixDb.transact({
   };
 
   return (
-    <div className="philosophy-page animate-fade">
+    <div className="animate-fade">
       <SEOHelper 
         title="Philosophy & Infrastructure Core" 
         description="Learn about Onfix's architectural DNA, zero write-locks databases, global Anycast routing, and run a live edge latency check."
       />
 
       {/* Hero Banner */}
-      <section className="philosophy-hero-section section-dark">
-        <div className="container header-container text-center">
-          <span className="section-pretitle">ONFIX DNA</span>
-          <h1 className="philosophy-hero-title">Sovereign Software Foundations</h1>
-          <p className="philosophy-hero-subtitle">
+      <section className="py-20 bg-[radial-gradient(circle_at_90%_10%,rgba(23,23,23,1)_0%,rgba(35,35,35,1)_100%)] border-b border-border-dark text-text-light">
+        <div className="container text-center">
+          <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">ONFIX DNA</span>
+          <h1 className="text-[3rem] max-[767px]:text-[2.2rem] font-[850] mt-2.5 mb-5 bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">Sovereign Software Foundations</h1>
+          <p className="max-w-[700px] mx-auto text-[1.15rem] text-text-muted-light leading-[1.7]">
             We don't wrap legacy databases in fancy dashboards. We re-engineer the transport protocols, engines, and nodes.
           </p>
         </div>
       </section>
 
       {/* Core DNA split section */}
-      <section className="philosophy-dna-section section">
-        <div className="container dna-grid">
-          <div className="dna-text-col">
-            <span className="section-pretitle">ENGINEERING PHILOSOPHY</span>
-            <h2>Zero Buffer. Zero Lag. Zero Excuses.</h2>
-            <p className="dna-paragraph-lead">
+      <section className="py-[100px] bg-bg-light border-b border-border-light">
+        <div className="container grid grid-cols-2 max-[991px]:grid-cols-1 gap-[60px] items-center">
+          <div>
+            <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">ENGINEERING PHILOSOPHY</span>
+            <h2 className="text-[2.2rem] font-extrabold mb-5 tracking-[-0.5px] text-text-dark">Zero Buffer. Zero Lag. Zero Excuses.</h2>
+            <p className="text-[1.2rem] leading-[1.7] text-text-muted-dark font-medium mb-5">
               At Onfix, we build the databases, compilers, and routing protocols ourselves. Our obsession with engineering efficiency means your POS never buffers, your stock is always synchronized, and your data is completely secure.
             </p>
-            <p>
+            <p className="text-text-muted-dark leading-[1.7] text-[0.95rem] mb-6">
               Most enterprise tools rely on layers of outdated wrappers and API bridges. When network density rises, database rows lock up and transactions queue, creating processing lag. We bypass these limitations completely by writing lock-free FIFO storage layers that interface directly with the edge hardware.
             </p>
-            <div className="dna-stats-row">
-              <div className="dna-stat-card">
-                <span className="dna-stat-val text-gradient-orange">&lt; 15ms</span>
-                <span className="dna-stat-lbl">Global Terminal Latency</span>
+            <div className="grid grid-cols-2 gap-5 mt-10">
+              <div className="bg-white border border-border-light p-6 rounded-medium shadow-subtle">
+                <span className="block text-[1.8rem] font-[850] mb-2 text-accent">&lt; 15ms</span>
+                <span className="text-[0.8rem] font-semibold text-text-muted-dark uppercase tracking-[0.5px]">Global Terminal Latency</span>
               </div>
-              <div className="dna-stat-card">
-                <span className="dna-stat-val text-gradient-orange">99.999%</span>
-                <span className="dna-stat-lbl">SLA Performance Target</span>
+              <div className="bg-white border border-border-light p-6 rounded-medium shadow-subtle">
+                <span className="block text-[1.8rem] font-[850] mb-2 text-accent">99.999%</span>
+                <span className="text-[0.8rem] font-semibold text-text-muted-dark uppercase tracking-[0.5px]">SLA Performance Target</span>
               </div>
             </div>
           </div>
 
-          <div className="dna-console-col">
-            <div className="console-navigation">
+          <div className="flex flex-col gap-4">
+            <div className="flex bg-[#f0f0f0] p-1 rounded-medium gap-1">
               {consoleTabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`console-tab-btn ${activeConsoleTab === tab.id ? 'tab-active' : ''}`}
+                  className={`flex-1 flex items-center justify-center gap-2 bg-transparent border-none p-3 font-semibold text-[0.85rem] text-[#666] rounded-small cursor-pointer transition-all duration-150 ease-out hover:text-accent ${
+                    activeConsoleTab === tab.id ? '!bg-white !text-accent shadow-subtle' : ''
+                  }`}
                   onClick={() => setActiveConsoleTab(tab.id)}
                 >
                   {tab.icon}
@@ -162,25 +161,25 @@ await onfixDb.transact({
               ))}
             </div>
 
-            <Card variant="dark" hoverEffect={false} className="console-display-card">
-              <div className="console-display-header">
-                <div className="console-title-indicator">
-                  <Terminal size={14} className="orange-text" />
+            <Card variant="dark" hoverEffect={false} className="!p-0 rounded-large overflow-hidden shadow-medium bg-[#171717] border border-[#2e2e2e]">
+              <div className="bg-[#111] px-5 py-3.5 flex justify-between items-center border-b border-[#222]">
+                <div className="flex items-center gap-2 font-mono text-[0.8rem] text-[#aaa]">
+                  <Terminal size={14} className="text-accent" />
                   <span>telemetry_inspector.log</span>
                 </div>
-                <div className="status-ping">
-                  <span className="ping-dot"></span>
+                <div className="flex items-center gap-2 text-[0.75rem] font-semibold text-[#27c93f]">
+                  <span className="w-2 h-2 rounded-full bg-[#27c93f] animate-pulse"></span>
                   <span>Active Link</span>
                 </div>
               </div>
 
-              <div className="console-display-body">
-                <h3 className="console-info-title">{currentTab.title}</h3>
-                <p className="console-info-text">{currentTab.text}</p>
+              <div className="p-6">
+                <h3 className="text-[1.25rem] font-bold mb-3 text-white">{currentTab.title}</h3>
+                <p className="text-[0.9rem] text-[#aaa] mb-6 leading-[1.6]">{currentTab.text}</p>
                 
-                <div className="console-code-block">
-                  <pre>
-                    <code>{currentTab.code}</code>
+                <div className="bg-[#0d0d0d] p-4 rounded-medium border border-[#222] overflow-x-auto">
+                  <pre className="m-0">
+                    <code className="font-mono text-[0.8rem] text-[#ff8d4d] leading-[1.5]">{currentTab.code}</code>
                   </pre>
                 </div>
               </div>
@@ -190,97 +189,97 @@ await onfixDb.transact({
       </section>
 
       {/* Latency Tester Section */}
-      <section className="latency-tester-section section section-dark">
-        <div className="latency-bg-glow"></div>
-        <div className="container tester-container">
-          <div className="tester-text-header text-center">
-            <span className="section-pretitle">EDGE ROUTING</span>
-            <h2>Anycast Edge Node Latency Test</h2>
-            <p className="tester-subtitle">
+      <section className="relative overflow-hidden border-b border-border-dark bg-bg-dark text-text-light py-[100px]">
+        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle,rgba(255,94,0,0.05)_0%,rgba(255,94,0,0)_70%)] pointer-events-none" aria-hidden="true"></div>
+        <div className="relative z-2 max-w-[800px] mx-auto container">
+          <div className="text-center">
+            <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">EDGE ROUTING</span>
+            <h2 className="text-[2.5rem] font-heading font-bold mb-4">Anycast Edge Node Latency Test</h2>
+            <p className="text-text-muted-light max-w-[600px] mx-auto mt-2.5 mb-10 text-[1.1rem]">
               Verify your current browser's connection response directly against our live Anycast edge cluster nodes.
             </p>
           </div>
 
           <div className="tester-widget-grid">
-            <Card variant="dark" className="tester-dashboard-card">
-              <div className="widget-header">
-                <Activity size={16} className="green-text" />
+            <Card variant="dark" hoverEffect={false} className="!p-0 bg-[#1a1a1a] !border border-[#2e2e2e]">
+              <div className="bg-[#111] px-6 py-4 font-[750] text-[0.8rem] tracking-[1px] text-[#888] flex items-center gap-2.5 border-b border-[#222]">
+                <Activity size={16} className="text-[#10b981]" />
                 <span>ACTIVE NODES PING MANAGER</span>
               </div>
               
-              <div className="nodes-ping-list">
+              <div className="flex flex-col">
                 {/* Colombo Node */}
-                <div className={`ping-node-item ${activePingNode === 'colombo' ? 'node-active' : ''}`}>
-                  <div className="node-info">
-                    <span className="node-dot green"></span>
+                <div className={`flex justify-between items-center px-6 py-4.5 border-b border-[#252525] transition-all duration-150 ease-out hover:bg-[#222] ${activePingNode === 'colombo' ? 'bg-accent/5' : ''}`}>
+                  <div className="flex items-center gap-4">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
                     <div>
-                      <span className="node-name">Colombo Edge Node</span>
-                      <span className="node-ip">lk-colombo-edge-01 (182.93.44.12)</span>
+                      <span className="block font-bold text-[0.95rem] text-white">Colombo Edge Node</span>
+                      <span className="block text-[0.75rem] text-[#777] mt-0.5">lk-colombo-edge-01 (182.93.44.12)</span>
                     </div>
                   </div>
-                  <span className="node-ping-value font-mono">
+                  <span className="font-bold text-accent text-[0.95rem] font-mono">
                     {typeof nodePings.colombo === 'number' ? `${nodePings.colombo} ms` : nodePings.colombo}
                   </span>
                 </div>
 
                 {/* Singapore Node */}
-                <div className={`ping-node-item ${activePingNode === 'singapore' ? 'node-active' : ''}`}>
-                  <div className="node-info">
-                    <span className="node-dot green"></span>
+                <div className={`flex justify-between items-center px-6 py-4.5 border-b border-[#252525] transition-all duration-150 ease-out hover:bg-[#222] ${activePingNode === 'singapore' ? 'bg-accent/5' : ''}`}>
+                  <div className="flex items-center gap-4">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
                     <div>
-                      <span className="node-name">Singapore Edge Node</span>
-                      <span className="node-ip">sg-singapore-edge-02 (203.11.89.92)</span>
+                      <span className="block font-bold text-[0.95rem] text-white">Singapore Edge Node</span>
+                      <span className="block text-[0.75rem] text-[#777] mt-0.5">sg-singapore-edge-02 (203.11.89.92)</span>
                     </div>
                   </div>
-                  <span className="node-ping-value font-mono">
+                  <span className="font-bold text-accent text-[0.95rem] font-mono">
                     {typeof nodePings.singapore === 'number' ? `${nodePings.singapore} ms` : nodePings.singapore}
                   </span>
                 </div>
 
                 {/* Tokyo Node */}
-                <div className={`ping-node-item ${activePingNode === 'tokyo' ? 'node-active' : ''}`}>
-                  <div className="node-info">
-                    <span className="node-dot green"></span>
+                <div className={`flex justify-between items-center px-6 py-4.5 border-b border-[#252525] transition-all duration-150 ease-out hover:bg-[#222] ${activePingNode === 'tokyo' ? 'bg-accent/5' : ''}`}>
+                  <div className="flex items-center gap-4">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
                     <div>
-                      <span className="node-name">Tokyo Node Array</span>
-                      <span className="node-ip">jp-tokyo-node-03 (172.21.102.5)</span>
+                      <span className="block font-bold text-[0.95rem] text-white">Tokyo Node Array</span>
+                      <span className="block text-[0.75rem] text-[#777] mt-0.5">jp-tokyo-node-03 (172.21.102.5)</span>
                     </div>
                   </div>
-                  <span className="node-ping-value font-mono">
+                  <span className="font-bold text-accent text-[0.95rem] font-mono">
                     {typeof nodePings.tokyo === 'number' ? `${nodePings.tokyo} ms` : nodePings.tokyo}
                   </span>
                 </div>
 
                 {/* Dublin Node */}
-                <div className={`ping-node-item ${activePingNode === 'dublin' ? 'node-active' : ''}`}>
-                  <div className="node-info">
-                    <span className="node-dot green"></span>
+                <div className={`flex justify-between items-center px-6 py-4.5 border-b border-[#252525] transition-all duration-150 ease-out hover:bg-[#222] ${activePingNode === 'dublin' ? 'bg-accent/5' : ''}`}>
+                  <div className="flex items-center gap-4">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
                     <div>
-                      <span className="node-name">Dublin Backup Node</span>
-                      <span className="node-ip">ie-dublin-node-04 (192.16.55.23)</span>
+                      <span className="block font-bold text-[0.95rem] text-white">Dublin Backup Node</span>
+                      <span className="block text-[0.75rem] text-[#777] mt-0.5">ie-dublin-node-04 (192.16.55.23)</span>
                     </div>
                   </div>
-                  <span className="node-ping-value font-mono">
+                  <span className="font-bold text-accent text-[0.95rem] font-mono">
                     {typeof nodePings.dublin === 'number' ? `${nodePings.dublin} ms` : nodePings.dublin}
                   </span>
                 </div>
 
                 {/* Oregon Node */}
-                <div className={`ping-node-item ${activePingNode === 'oregon' ? 'node-active' : ''}`}>
-                  <div className="node-info">
-                    <span className="node-dot green"></span>
+                <div className={`flex justify-between items-center px-6 py-4.5 border-b-0 transition-all duration-150 ease-out hover:bg-[#222] ${activePingNode === 'oregon' ? 'bg-accent/5' : ''}`}>
+                  <div className="flex items-center gap-4">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
                     <div>
-                      <span className="node-name">Oregon Cluster Node</span>
-                      <span className="node-ip">us-oregon-node-01 (54.12.89.200)</span>
+                      <span className="block font-bold text-[0.95rem] text-white">Oregon Cluster Node</span>
+                      <span className="block text-[0.75rem] text-[#777] mt-0.5">us-oregon-node-01 (54.12.89.200)</span>
                     </div>
                   </div>
-                  <span className="node-ping-value font-mono">
+                  <span className="font-bold text-accent text-[0.95rem] font-mono">
                     {typeof nodePings.oregon === 'number' ? `${nodePings.oregon} ms` : nodePings.oregon}
                   </span>
                 </div>
               </div>
 
-              <div className="tester-footer-action">
+              <div className="p-6 flex flex-col items-center gap-4 bg-[#151515] max-[767px]:w-full [&>button]:max-[767px]:w-full">
                 <Button 
                   onClick={executePingTest} 
                   disabled={pingStatus === 'testing'} 
@@ -291,8 +290,8 @@ await onfixDb.transact({
                 </Button>
                 
                 {pingStatus === 'completed' && (
-                  <div className="latency-result-banner">
-                    <CheckCircle2 size={16} className="green-text" />
+                  <div className="flex items-center gap-2 bg-[#10b981]/10 border border-[#10b981]/20 px-4.5 py-2.5 rounded-pill text-[0.85rem] text-[#34d399]">
+                    <CheckCircle2 size={16} className="text-[#10b981]" />
                     <span>Edge networks verified. Minimum latency: <strong>{nodePings.colombo}ms</strong></span>
                   </div>
                 )}
@@ -303,39 +302,39 @@ await onfixDb.transact({
       </section>
 
       {/* Security & Compliance Certifications Grid */}
-      <section className="philosophy-security-section section">
+      <section className="py-[100px] bg-bg-light">
         <div className="container">
-          <div className="section-header text-center">
-            <span className="section-pretitle">AUDIT SCOPE</span>
-            <h2 className="section-title">Verified Corporate Protections</h2>
-            <p className="section-subtitle">
+          <div className="text-center mb-12">
+            <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">AUDIT SCOPE</span>
+            <h2 className="text-[2.5rem] font-heading font-bold mb-4 text-text-dark">Verified Corporate Protections</h2>
+            <p className="max-w-[700px] mx-auto text-[#666] text-lg leading-[1.6]">
               We design our applications to maintain continuous compliance certificates with global information security protocols.
             </p>
           </div>
 
-          <div className="security-cert-grid">
-            <Card variant="light" className="security-cert-card">
-              <Shield className="orange-text" size={36} />
-              <h3>SOC 2 Type II Certified</h3>
-              <p>Independent security audit verifying availability, confidentiality, and processing integrity of client data engines.</p>
+          <div className="grid grid-cols-4 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1 gap-6 mt-[50px]">
+            <Card variant="light" hoverEffect={false} className="text-center p-[36px_24px] flex flex-col items-center h-full">
+              <Shield className="text-accent" size={36} />
+              <h3 className="text-[1.15rem] font-bold mt-5 mb-3 text-text-dark">SOC 2 Type II Certified</h3>
+              <p className="text-[0.85rem] leading-[1.5] text-text-muted-dark">Independent security audit verifying availability, confidentiality, and processing integrity of client data engines.</p>
             </Card>
 
-            <Card variant="light" className="security-cert-card">
-              <CheckCircle2 className="orange-text" size={36} />
-              <h3>PCI-DSS Level 1 Enforced</h3>
-              <p>Strict cardholder data protections embedded directly into transaction processing, tokenizing user payment logs.</p>
+            <Card variant="light" hoverEffect={false} className="text-center p-[36px_24px] flex flex-col items-center h-full">
+              <CheckCircle2 className="text-accent" size={36} />
+              <h3 className="text-[1.15rem] font-bold mt-5 mb-3 text-text-dark">PCI-DSS Level 1 Enforced</h3>
+              <p className="text-[0.85rem] leading-[1.5] text-text-muted-dark">Strict cardholder data protections embedded directly into transaction processing, tokenizing user payment logs.</p>
             </Card>
 
-            <Card variant="light" className="security-cert-card">
-              <Server className="orange-text" size={36} />
-              <h3>GDPR & Data Sovereignty</h3>
-              <p>Local anycast routing configuration respects data boundaries, keeping transactional ledger entries within national nodes.</p>
+            <Card variant="light" hoverEffect={false} className="text-center p-[36px_24px] flex flex-col items-center h-full">
+              <Server className="text-accent" size={36} />
+              <h3 className="text-[1.15rem] font-bold mt-5 mb-3 text-text-dark">GDPR & Data Sovereignty</h3>
+              <p className="text-[0.85rem] leading-[1.5] text-text-muted-dark">Local anycast routing configuration respects data boundaries, keeping transactional ledger entries within national nodes.</p>
             </Card>
 
-            <Card variant="light" className="security-cert-card">
-              <ShieldAlert className="orange-text" size={36} />
-              <h3>256-Bit GCM Encrypted</h3>
-              <p>Dynamic data packages are encrypted-at-rest and in-transit utilizing AES-256 GCM cryptographic frameworks.</p>
+            <Card variant="light" hoverEffect={false} className="text-center p-[36px_24px] flex flex-col items-center h-full">
+              <ShieldAlert className="text-accent" size={36} />
+              <h3 className="text-[1.15rem] font-bold mt-5 mb-3 text-text-dark">256-Bit GCM Encrypted</h3>
+              <p className="text-[0.85rem] leading-[1.5] text-text-muted-dark">Dynamic data packages are encrypted-at-rest and in-transit utilizing AES-256 GCM cryptographic frameworks.</p>
             </Card>
           </div>
         </div>

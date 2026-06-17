@@ -3,7 +3,6 @@ import { Activity, Radio, Cpu, Clock } from 'lucide-react';
 import { Card } from '../components/common/Card';
 import { analyticsService, type LiveTelemetryMetrics } from '../services/analyticsService';
 import { GlobeThree } from './GlobeThree';
-import './Telemetry.css';
 
 export const Telemetry: React.FC = () => {
   const [metrics, setMetrics] = useState<LiveTelemetryMetrics>({
@@ -16,7 +15,6 @@ export const Telemetry: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Initial fetch from service
     const fetchInitialMetrics = async () => {
       try {
         const initial = await analyticsService.getLiveTelemetry();
@@ -30,7 +28,6 @@ export const Telemetry: React.FC = () => {
     
     fetchInitialMetrics();
 
-    // Setup polling with micro-fluctuations to show real-time changes
     const interval = setInterval(() => {
       setMetrics((prev) => {
         const transAdded = Math.floor(Math.random() * 45) + 15;
@@ -55,7 +52,7 @@ export const Telemetry: React.FC = () => {
   };
 
   return (
-    <section id="telemetry" className="telemetry-section section">
+    <section id="telemetry" className="bg-gradient-to-br from-[#f8f8f8] to-[#f0f0f0] border-t border-b border-black/7 relative z-5 section">
       <div className="container">
         <div className="section-header">
           <span className="section-pretitle">INFRASTRUCTURE STATUS</span>
@@ -65,81 +62,81 @@ export const Telemetry: React.FC = () => {
           </p>
         </div>
 
-        <div className="telemetry-layout">
-          <div className="telemetry-globe-col">
-            <div className="telemetry-globe-glow" aria-hidden="true" />
+        <div className="grid grid-cols-[minmax(0,440px)_1fr] max-[1199px]:grid-cols-1 gap-12 items-center mt-10">
+          <div className="relative flex flex-col items-center justify-center max-[1199px]:hidden">
+            <div className="absolute w-[420px] h-[420px] rounded-full bg-[radial-gradient(circle,rgba(255,94,0,0.10)_0%,transparent_70%)] blur-[50px] pointer-events-none" aria-hidden="true" />
             <GlobeThree />
-            <span className="telemetry-globe-caption">5 regions · always-on monitoring</span>
+            <span className="relative z-2 mt-2 text-[0.7rem] font-bold uppercase tracking-[1px] text-[#9ca3af]">5 regions · always-on monitoring</span>
           </div>
 
-          <div className="telemetry-grid">
-          {/* Metric Card 1: Active Terminals */}
-          <Card variant="dark" className="telemetry-card">
-            <div className="telemetry-card-header">
-              <Radio size={20} className="telemetry-card-icon green-icon" />
-              <span className="telemetry-card-label">Active Terminal Nodes</span>
-            </div>
-            {loading ? (
-              <div className="telemetry-loader">...</div>
-            ) : (
-              <div className="telemetry-value-wrap">
-                <span className="telemetry-value font-mono">{formatNumber(metrics.activeTerminals)}</span>
-                <span className="telemetry-trend green-text">● Live</span>
+          <div className="grid grid-cols-2 max-[575px]:grid-cols-1 gap-6 max-[1199px]:gap-5 max-[575px]:gap-4">
+            {/* Metric Card 1: Active Terminals */}
+            <Card variant="dark" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] !bg-white !border !border-black/7 !shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
+              <div className="flex items-center gap-3 mb-4">
+                <Radio size={20} className="inline-flex text-[#10B981]" />
+                <span className="text-[0.72rem] font-[750] uppercase text-[#888] tracking-[0.5px]">Active Terminal Nodes</span>
               </div>
-            )}
-            <div className="telemetry-footer-text">Online client terminals synchronized.</div>
-          </Card>
+              {loading ? (
+                <div className="text-[1.4rem] text-[#aaa] py-2">...</div>
+              ) : (
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[1.8rem] font-[850] text-[#111111] tracking-[-0.5px] font-mono">{formatNumber(metrics.activeTerminals)}</span>
+                  <span className="text-[0.68rem] font-[850] p-[4px_10px] rounded-pill uppercase tracking-[0.5px] whitespace-nowrap text-[#059669] bg-[#10b981]/8 border border-[#10b981]/18">● Live</span>
+                </div>
+              )}
+              <div className="text-[0.78rem] text-[#999] mt-auto border-t border-black/6 pt-3">Online client terminals synchronized.</div>
+            </Card>
 
-          {/* Metric Card 2: Transactions */}
-          <Card variant="dark" className="telemetry-card">
-            <div className="telemetry-card-header">
-              <Activity size={20} className="telemetry-card-icon orange-icon" />
-              <span className="telemetry-card-label">Transactions This Month</span>
-            </div>
-            {loading ? (
-              <div className="telemetry-loader">...</div>
-            ) : (
-              <div className="telemetry-value-wrap">
-                <span className="telemetry-value font-mono">{formatNumber(metrics.monthlyTransactions)}</span>
-                <span className="telemetry-trend orange-text animate-pulse">▲ Ticking</span>
+            {/* Metric Card 2: Transactions */}
+            <Card variant="dark" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] !bg-white !border !border-black/7 !shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
+              <div className="flex items-center gap-3 mb-4">
+                <Activity size={20} className="inline-flex text-accent" />
+                <span className="text-[0.72rem] font-[750] uppercase text-[#888] tracking-[0.5px]">Transactions This Month</span>
               </div>
-            )}
-            <div className="telemetry-footer-text">Aggregated card, invoice, and QR charges.</div>
-          </Card>
+              {loading ? (
+                <div className="text-[1.4rem] text-[#aaa] py-2">...</div>
+              ) : (
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[1.8rem] font-[850] text-[#111111] tracking-[-0.5px] font-mono">{formatNumber(metrics.monthlyTransactions)}</span>
+                  <span className="text-[0.68rem] font-[850] p-[4px_10px] rounded-pill uppercase tracking-[0.5px] whitespace-nowrap text-accent bg-accent/8 border border-accent/18 animate-pulse">▲ Ticking</span>
+                </div>
+              )}
+              <div className="text-[0.78rem] text-[#999] mt-auto border-t border-black/6 pt-3">Aggregated card, invoice, and QR charges.</div>
+            </Card>
 
-          {/* Metric Card 3: Uptime */}
-          <Card variant="dark" className="telemetry-card">
-            <div className="telemetry-card-header">
-              <Cpu size={20} className="telemetry-card-icon green-icon" />
-              <span className="telemetry-card-label">System SLA & Uptime</span>
-            </div>
-            {loading ? (
-              <div className="telemetry-loader">...</div>
-            ) : (
-              <div className="telemetry-value-wrap">
-                <span className="telemetry-value font-mono">{metrics.serverUptime}%</span>
-                <span className="telemetry-trend green-text">Uptime</span>
+            {/* Metric Card 3: Uptime */}
+            <Card variant="dark" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] !bg-white !border !border-black/7 !shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
+              <div className="flex items-center gap-3 mb-4">
+                <Cpu size={20} className="inline-flex text-[#10B981]" />
+                <span className="text-[0.72rem] font-[750] uppercase text-[#888] tracking-[0.5px]">System SLA & Uptime</span>
               </div>
-            )}
-            <div className="telemetry-footer-text">Global clusters load-balanced failover index.</div>
-          </Card>
+              {loading ? (
+                <div className="text-[1.4rem] text-[#aaa] py-2">...</div>
+              ) : (
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[1.8rem] font-[850] text-[#111111] tracking-[-0.5px] font-mono">{metrics.serverUptime}%</span>
+                  <span className="text-[0.68rem] font-[850] p-[4px_10px] rounded-pill uppercase tracking-[0.5px] whitespace-nowrap text-[#059669] bg-[#10b981]/8 border border-[#10b981]/18">Uptime</span>
+                </div>
+              )}
+              <div className="text-[0.78rem] text-[#999] mt-auto border-t border-black/6 pt-3">Global clusters load-balanced failover index.</div>
+            </Card>
 
-          {/* Metric Card 4: Latency */}
-          <Card variant="dark" className="telemetry-card">
-            <div className="telemetry-card-header">
-              <Clock size={20} className="telemetry-card-icon orange-icon" />
-              <span className="telemetry-card-label">Avg API Node Latency</span>
-            </div>
-            {loading ? (
-              <div className="telemetry-loader">...</div>
-            ) : (
-              <div className="telemetry-value-wrap">
-                <span className="telemetry-value font-mono">{metrics.apiLatencyMs}ms</span>
-                <span className="telemetry-trend green-text">Optimal</span>
+            {/* Metric Card 4: Latency */}
+            <Card variant="dark" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] !bg-white !border !border-black/7 !shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
+              <div className="flex items-center gap-3 mb-4">
+                <Clock size={20} className="inline-flex text-accent" />
+                <span className="text-[0.72rem] font-[750] uppercase text-[#888] tracking-[0.5px]">Avg API Node Latency</span>
               </div>
-            )}
-            <div className="telemetry-footer-text">Anycast edge gateway roundtrip latency.</div>
-          </Card>
+              {loading ? (
+                <div className="text-[1.4rem] text-[#aaa] py-2">...</div>
+              ) : (
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[1.8rem] font-[850] text-[#111111] tracking-[-0.5px] font-mono">{metrics.apiLatencyMs}ms</span>
+                  <span className="text-[0.68rem] font-[850] p-[4px_10px] rounded-pill uppercase tracking-[0.5px] whitespace-nowrap text-[#059669] bg-[#10b981]/8 border border-[#10b981]/18">Optimal</span>
+                </div>
+              )}
+              <div className="text-[0.78rem] text-[#999] mt-auto border-t border-black/6 pt-3">Anycast edge gateway roundtrip latency.</div>
+            </Card>
           </div>
         </div>
       </div>
