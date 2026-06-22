@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
-@theme {
-  /* Colors */
+:root {
   --color-primary: #FBEAE1;
   --color-accent: #FF5E00;
   --color-accent-hover: #E05300;
@@ -15,9 +14,50 @@
   --color-border-light: #E5E5E5;
   --color-border-dark: #2E2E2E;
 
-  /* Glassmorphism background values */
   --bg-glass-light: rgba(250, 250, 250, 0.8);
   --bg-glass-dark: rgba(23, 23, 23, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.4);
+
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FAFAFA;
+  --color-border-hover: #CBD5E1;
+}
+
+.dark {
+  --color-primary: #2d1810;
+  --color-bg-light: #121212;
+  --color-text-dark: #FAFAFA;
+  --color-text-muted-dark: #A3A3A3;
+  --color-border-light: #2A2A2A;
+  --bg-glass-light: rgba(18, 18, 18, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.08);
+
+  --bg-card: #1C1C1C;
+  --bg-card-hover: #262626;
+  --color-border-hover: #404040;
+}
+
+@theme {
+  /* Colors */
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-bg-light: var(--color-bg-light);
+  --color-bg-dark: var(--color-bg-dark);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-light: var(--color-text-light);
+  --color-text-muted-dark: var(--color-text-muted-dark);
+  --color-text-muted-light: var(--color-text-muted-light);
+  --color-border-light: var(--color-border-light);
+  --color-border-dark: var(--color-border-dark);
+
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-hover: var(--bg-card-hover);
+  --color-border-hover: var(--color-border-hover);
+
+  /* Glassmorphism background values */
+  --bg-glass-light: var(--bg-glass-light);
+  --bg-glass-dark: var(--bg-glass-dark);
   --blur-amount: 12px;
 
   /* Typography */
@@ -53,6 +93,14 @@
   --animate-float-c: floatC 3.6s ease-in-out infinite;
   --animate-live-pulse: livePulse 1.8s ease-in-out infinite;
 
+  /* Dashboard phased building animations (slowed down for cinematic reveal) */
+  --animate-sidebar-in: sidebarIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-stat-pop: statPop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  --animate-chart-fade: chartFade 1.2s ease forwards;
+  --animate-bar-grow: barGrow 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-activity-slide: activitySlide 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-tab-fade: tabFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -87,6 +135,72 @@
     0%   { box-shadow: 0 0 0 0   rgba(255,94,0,0.55); }
     70%  { box-shadow: 0 0 0 7px rgba(255,94,0,0);    }
     100% { box-shadow: 0 0 0 0   rgba(255,94,0,0);    }
+  }
+  @keyframes tabFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Phased building keyframes */
+  @keyframes sidebarIn {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes statPop {
+    0% {
+      opacity: 0;
+      transform: scale(0.7) translateY(15px);
+    }
+    60% {
+      transform: scale(1.05) translateY(-3px);
+    }
+    85% {
+      transform: scale(0.98) translateY(1px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  @keyframes chartFade {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes barGrow {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+  @keyframes activitySlide {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -184,7 +298,7 @@ a {
   background: var(--bg-glass-light);
   backdrop-filter: blur(var(--blur-amount));
   -webkit-backdrop-filter: blur(var(--blur-amount));
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--border-glass);
 }
 
 @utility glass-dark {
@@ -222,3 +336,61 @@ a {
     transform: translateY(0);
   }
 }
+
+/* Dashboard Mockup 3D Perspective Reveal */
+.dashboard-container-reveal {
+  opacity: 0;
+  transform: perspective(1600px) rotateY(-20deg) rotateX(10deg) scale(0.95);
+  transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.dashboard-container-reveal.revealed {
+  opacity: 1;
+  transform: perspective(1600px) rotateY(-7deg) rotateX(3deg) scale(1);
+}
+
+.dashboard-container-reveal.revealed:hover {
+  transform: perspective(1600px) rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+
+@media (max-width: 900px) {
+  .dashboard-container-reveal {
+    opacity: 0;
+    transform: translateY(8px) scale(1);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .dashboard-container-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .dashboard-container-reveal.revealed:hover {
+    transform: none;
+  }
+
+  /* Disable phased staggered animations on mobile, replace with flat fade-in-up */
+  .animate-sidebar-in,
+  .animate-stat-pop,
+  .animate-chart-fade,
+  .animate-bar-grow,
+  .animate-activity-slide {
+    animation: mobileFadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    animation-delay: 100ms !important;
+  }
+
+  .scale-y-0 {
+    transform: scaleY(1) !important;
+  }
+
+  @keyframes mobileFadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+

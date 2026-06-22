@@ -23,13 +23,13 @@ export const Home: React.FC = () => {
       </ScrollReveal>
 
       {/* What we do — plain-language services */}
-      <section className="bg-gradient-to-br from-[#f5f5f5] to-[#efefef] border-t border-b border-black/7 relative py-[100px]">
+      <section className="bg-gradient-to-br from-bg-light to-bg-card-hover/20 border-t border-b border-border-light relative py-[100px]">
         <div className="container">
           <ScrollReveal>
             <div className="text-center mb-12">
               <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">WHAT WE DO</span>
-              <h2 className="text-[2.5rem] font-heading font-bold mb-4 text-[#111111]">Software solutions, end to end</h2>
-              <p className="max-w-[700px] mx-auto text-[#666] text-lg leading-[1.6]">
+              <h2 className="text-[2.5rem] font-heading font-bold mb-4 text-text-dark">Software solutions, end to end</h2>
+              <p className="max-w-[700px] mx-auto text-text-muted-dark text-lg leading-[1.6]">
                 Whether you need a website, a custom app, smarter automation, or your tools talking to each other — we design, build, and support it for you.
               </p>
             </div>
@@ -37,12 +37,12 @@ export const Home: React.FC = () => {
 
           <div className="grid grid-cols-4 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1 gap-6 mt-[50px] relative z-5">
             <ScrollReveal delay={100} className="h-full">
-              <Card variant="light" hoverEffect={false} className="flex flex-col h-full bg-white !border !border-black/7 !shadow-[0_2px_16px_rgba(0,0,0,0.04)] p-[36px_30px] rounded-large transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:!border-accent hover:!shadow-[0_20px_45px_rgba(255,94,0,0.10)]">
+              <Card variant="light" hoverEffect={false} className="flex flex-col h-full border border-border-light shadow-subtle p-[36px_30px] rounded-large transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:!border-accent hover:!shadow-[0_20px_45px_rgba(255,94,0,0.10)]">
                 <div className="mb-6">
                   <Globe className="text-accent" size={30} />
                 </div>
-                <h3 className="text-[1.25rem] font-heading font-extrabold mb-3.5 text-[#111111]">Websites &amp; Apps</h3>
-                <p className="text-[#666] text-[0.92rem] leading-[1.6] mb-[30px] grow">Fast, modern websites and mobile apps that look great and are easy for your customers to use.</p>
+                <h3 className="text-[1.25rem] font-heading font-extrabold mb-3.5 text-text-dark">Websites &amp; Apps</h3>
+                <p className="text-text-muted-dark text-[0.92rem] leading-[1.6] mb-[30px] grow">Fast, modern websites and mobile apps that look great and are easy for your customers to use.</p>
                 <Link to="/products" className="inline-flex items-center gap-2 text-accent font-bold text-[0.9rem] transition-all duration-300 ease-out hover:gap-3.5 hover:text-[#e05300]">
                   <span>See what we build</span> <ArrowRight size={14} />
                 </Link>
@@ -50,12 +50,12 @@ export const Home: React.FC = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={200} className="h-full">
-              <Card variant="light" hoverEffect={false} className="flex flex-col h-full bg-white !border !border-black/7 !shadow-[0_2px_16px_rgba(0,0,0,0.04)] p-[36px_30px] rounded-large transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:!border-accent hover:!shadow-[0_20px_45px_rgba(255,94,0,0.10)]">
+              <Card variant="light" hoverEffect={false} className="flex flex-col h-full border border-border-light shadow-subtle p-[36px_30px] rounded-large transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:!border-accent hover:!shadow-[0_20px_45px_rgba(255,94,0,0.10)]">
                 <div className="mb-6">
                   <Code className="text-accent" size={30} />
                 </div>
-                <h3 className="text-[1.25rem] font-heading font-extrabold mb-3.5 text-[#111111]">Custom Software</h3>
-                <p className="text-[#666] text-[0.92rem] leading-[1.6] mb-[30px] grow">Tools built around how you actually work — POS, inventory, dashboards, and internal systems made just for your team.</p>
+                <h3 className="text-[1.25rem] font-heading font-extrabold mb-3.5 text-text-dark">Custom Software</h3>
+                <p className="text-text-muted-dark text-[0.92rem] leading-[1.6] mb-[30px] grow">Tools built around how you actually work — POS, inventory, dashboards, and internal systems made just for your team.</p>
                 <Link to="/products" className="inline-flex items-center gap-2 text-accent font-bold text-[0.9rem] transition-all duration-300 ease-out hover:gap-3.5 hover:text-[#e05300]">
                   <span>Explore our products</span> <ArrowRight size={14} />
                 </Link>
@@ -63,12 +63,12 @@ export const Home: React.FC = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={300} className="h-full">
-              <Card variant="light" hoverEffect={false} className="flex flex-col h-full bg-white !border !border-black/7 !shadow-[0_2px_16px_rgba(0,0,0,0.04)] p-[36px_30px] rounded-large transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:!border-accent hover:!shadow-[0_20px_45px_rgba(255,94,0,0.10)]">
+              <Card variant="light" hoverEffect={false} className="flex flex-col h-full border border-border-light shadow-subtle p-[36px_30px] rounded-large transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:!border-accent hover:!shadow-[0_20px_45px_rgba(255,94,0,0.10)]">
                 <div className="mb-6">
                   <Sparkles className="text-accent" size={30} />
                 </div>
-                <h3 className="text-[1.25rem] font-heading font-extrabold mb-3.5 text-[#111111]">AI &amp; Automation</h3>
-                <p className="text-[#666] text-[0.92rem] leading-[1.6] mb-[30px] grow">Put AI to work: automate repetitive tasks, answer customers 24/7, and turn your data into clear decisions.</p>
+                <h3 className="text-[1.25rem] font-heading font-extrabold mb-3.5 text-text-dark">AI &amp; Automation</h3>
+                <p className="text-text-muted-dark text-[0.92rem] leading-[1.6] mb-[30px] grow">Put AI to work: automate repetitive tasks, answer customers 24/7, and turn your data into clear decisions.</p>
                 <Link to="/contact" className="inline-flex items-center gap-2 text-accent font-bold text-[0.9rem] transition-all duration-300 ease-out hover:gap-3.5 hover:text-[#e05300]">
                   <span>Talk about your idea</span> <ArrowRight size={14} />
                 </Link>
@@ -76,12 +76,12 @@ export const Home: React.FC = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={400} className="h-full">
-              <Card variant="light" hoverEffect={false} className="flex flex-col h-full bg-white !border !border-black/7 !shadow-[0_2px_16px_rgba(0,0,0,0.04)] p-[36px_30px] rounded-large transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:!border-accent hover:!shadow-[0_20px_45px_rgba(255,94,0,0.10)]">
+              <Card variant="light" hoverEffect={false} className="flex flex-col h-full border border-border-light shadow-subtle p-[36px_30px] rounded-large transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:!border-accent hover:!shadow-[0_20px_45px_rgba(255,94,0,0.10)]">
                 <div className="mb-6">
                   <Share2 className="text-accent" size={30} />
                 </div>
-                <h3 className="text-[1.25rem] font-heading font-extrabold mb-3.5 text-[#111111]">Integrations</h3>
-                <p className="text-[#666] text-[0.92rem] leading-[1.6] mb-[30px] grow">Connect the apps you already use — payments, accounting, delivery — so your data flows automatically, with no double entry.</p>
+                <h3 className="text-[1.25rem] font-heading font-extrabold mb-3.5 text-text-dark">Integrations</h3>
+                <p className="text-text-muted-dark text-[0.92rem] leading-[1.6] mb-[30px] grow">Connect the apps you already use — payments, accounting, delivery — so your data flows automatically, with no double entry.</p>
                 <Link to="/products" className="inline-flex items-center gap-2 text-accent font-bold text-[0.9rem] transition-all duration-300 ease-out hover:gap-3.5 hover:text-[#e05300]">
                   <span>Review integrations</span> <ArrowRight size={14} />
                 </Link>

@@ -4,9 +4,11 @@ import {
   Menu, X, ArrowRight, ChevronDown, 
   ShoppingBag, Cpu, Database, Share2, 
   Server, Shield, Activity, FileText, 
-  Zap, HelpCircle, PhoneCall, Code
+  Zap, HelpCircle, PhoneCall, Code,
+  Sun, Moon
 } from 'lucide-react';
 import { Button } from '../common/Button';
+import { useDarkMode } from '../../hooks/useDarkMode';
 import logoImg from '../../assets/logos/onfix-smooth-square-logo.png';
 
 export const Navbar: React.FC = () => {
@@ -16,6 +18,7 @@ export const Navbar: React.FC = () => {
   const [activeMobileAccordion, setActiveMobileAccordion] = useState<string | null>(null);
   const closeTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
+  const { theme, toggleTheme } = useDarkMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +69,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className={`absolute top-0 left-0 w-full h-[90px] z-[1000] flex items-center transition-all duration-300 ease-out border-b border-transparent ${scrolled ? 'fixed h-[75px] bg-[#fafafa]/92 backdrop-blur-[12px] border-b border-black/5 shadow-subtle' : ''}`}>
+    <header className={`absolute top-0 left-0 w-full h-[90px] z-[1000] flex items-center transition-all duration-300 ease-out border-b border-transparent ${scrolled ? 'fixed h-[75px] bg-bg-light/92 backdrop-blur-[12px] border-b border-border-light/40 shadow-subtle' : ''}`}>
       <div className="container flex items-center justify-between">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-3 group" onClick={closeMenu}>
@@ -84,12 +87,12 @@ export const Navbar: React.FC = () => {
               onMouseEnter={() => handleMouseEnter('products')}
               onMouseLeave={handleMouseLeave}
             >
-              <Link to="/products" className={`text-[0.95rem] font-semibold text-text-dark inline-flex items-center gap-1.5 opacity-80 transition-all duration-150 ease-out hover:opacity-100 hover:text-accent ${scrolled ? 'py-6' : 'py-[30px]'} ${location.pathname === '/products' ? 'opacity-100 text-accent' : ''}`}>
+              <Link to="/products" className={`text-[0.95rem] font-semibold inline-flex items-center gap-1.5 transition-all duration-150 ease-out hover:opacity-100 hover:text-accent ${scrolled ? 'py-6' : 'py-[30px]'} ${location.pathname === '/products' ? 'opacity-100 text-accent' : 'text-text-dark opacity-80'}`}>
                 <span>Products</span> <ChevronDown size={14} className={`transition-transform duration-200 ease-out ${activeDropdown === 'products' ? 'rotate-180' : ''}`} />
               </Link>
               
               {activeDropdown === 'products' && (
-                <div className={`absolute left-0 w-full bg-[#fafafa]/98 border-b border-black/8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-10 z-[999] backdrop-blur-[12px] animate-slide-down ${scrolled ? 'top-[75px]' : 'top-[90px]'}`}>
+                <div className={`absolute left-0 w-full bg-bg-light/98 border-b border-border-light shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-10 z-[999] backdrop-blur-[12px] animate-slide-down ${scrolled ? 'top-[75px]' : 'top-[90px]'}`}>
                   <div className="container">
                     <div className="grid grid-cols-[1.1fr_1.1fr_0.8fr_1.2fr] gap-8">
                       
@@ -165,12 +168,12 @@ export const Navbar: React.FC = () => {
               onMouseEnter={() => handleMouseEnter('philosophy')}
               onMouseLeave={handleMouseLeave}
             >
-              <Link to="/philosophy" className={`text-[0.95rem] font-semibold text-text-dark inline-flex items-center gap-1.5 opacity-80 transition-all duration-150 ease-out hover:opacity-100 hover:text-accent ${scrolled ? 'py-6' : 'py-[30px]'} ${location.pathname === '/philosophy' ? 'opacity-100 text-accent' : ''}`}>
+              <Link to="/philosophy" className={`text-[0.95rem] font-semibold inline-flex items-center gap-1.5 transition-all duration-150 ease-out hover:opacity-100 hover:text-accent ${scrolled ? 'py-6' : 'py-[30px]'} ${location.pathname === '/philosophy' ? 'opacity-100 text-accent' : 'text-text-dark opacity-80'}`}>
                 <span>Philosophy & Infra</span> <ChevronDown size={14} className={`transition-transform duration-200 ease-out ${activeDropdown === 'philosophy' ? 'rotate-180' : ''}`} />
               </Link>
 
               {activeDropdown === 'philosophy' && (
-                <div className={`absolute left-0 w-full bg-[#fafafa]/98 border-b border-black/8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-10 z-[999] backdrop-blur-[12px] animate-slide-down ${scrolled ? 'top-[75px]' : 'top-[90px]'}`}>
+                <div className={`absolute left-0 w-full bg-bg-light/98 border-b border-border-light shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-10 z-[999] backdrop-blur-[12px] animate-slide-down ${scrolled ? 'top-[75px]' : 'top-[90px]'}`}>
                   <div className="container">
                     <div className="grid grid-cols-[1.1fr_1.1fr_0.8fr_1.2fr] gap-8">
 
@@ -251,12 +254,12 @@ export const Navbar: React.FC = () => {
               onMouseEnter={() => handleMouseEnter('insights')}
               onMouseLeave={handleMouseLeave}
             >
-              <Link to="/insights" className={`text-[0.95rem] font-semibold text-text-dark inline-flex items-center gap-1.5 opacity-80 transition-all duration-150 ease-out hover:opacity-100 hover:text-accent ${scrolled ? 'py-6' : 'py-[30px]'} ${location.pathname === '/insights' ? 'opacity-100 text-accent' : ''}`}>
+              <Link to="/insights" className={`text-[0.95rem] font-semibold inline-flex items-center gap-1.5 transition-all duration-150 ease-out hover:opacity-100 hover:text-accent ${scrolled ? 'py-6' : 'py-[30px]'} ${location.pathname === '/insights' ? 'opacity-100 text-accent' : 'text-text-dark opacity-80'}`}>
                 <span>Insights</span> <ChevronDown size={14} className={`transition-transform duration-200 ease-out ${activeDropdown === 'insights' ? 'rotate-180' : ''}`} />
               </Link>
 
               {activeDropdown === 'insights' && (
-                <div className={`absolute left-0 w-full bg-[#fafafa]/98 border-b border-black/8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-10 z-[999] backdrop-blur-[12px] animate-slide-down ${scrolled ? 'top-[75px]' : 'top-[90px]'}`}>
+                <div className={`absolute left-0 w-full bg-bg-light/98 border-b border-border-light shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-10 z-[999] backdrop-blur-[12px] animate-slide-down ${scrolled ? 'top-[75px]' : 'top-[90px]'}`}>
                   <div className="container">
                     <div className="grid grid-cols-[1.1fr_1.1fr_0.8fr_1.2fr] gap-8">
 
@@ -315,12 +318,12 @@ export const Navbar: React.FC = () => {
               onMouseEnter={() => handleMouseEnter('company')}
               onMouseLeave={handleMouseLeave}
             >
-              <Link to="/contact" className={`text-[0.95rem] font-semibold text-text-dark inline-flex items-center gap-1.5 opacity-80 transition-all duration-150 ease-out hover:opacity-100 hover:text-accent ${scrolled ? 'py-6' : 'py-[30px]'} ${location.pathname === '/contact' ? 'opacity-100 text-accent' : ''}`}>
+              <Link to="/contact" className={`text-[0.95rem] font-semibold inline-flex items-center gap-1.5 transition-all duration-150 ease-out hover:opacity-100 hover:text-accent ${scrolled ? 'py-6' : 'py-[30px]'} ${location.pathname === '/contact' ? 'opacity-100 text-accent' : 'text-text-dark opacity-80'}`}>
                 <span>Company & Support</span> <ChevronDown size={14} className={`transition-transform duration-200 ease-out ${activeDropdown === 'company' ? 'rotate-180' : ''}`} />
               </Link>
 
               {activeDropdown === 'company' && (
-                <div className={`absolute left-0 w-full bg-[#fafafa]/98 border-b border-black/8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-10 z-[999] backdrop-blur-[12px] animate-slide-down ${scrolled ? 'top-[75px]' : 'top-[90px]'}`}>
+                <div className={`absolute left-0 w-full bg-bg-light/98 border-b border-border-light shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-10 z-[999] backdrop-blur-[12px] animate-slide-down ${scrolled ? 'top-[75px]' : 'top-[90px]'}`}>
                   <div className="container">
                     <div className="grid grid-cols-[1.1fr_1.1fr_0.8fr_1.2fr] gap-8">
 
@@ -375,8 +378,16 @@ export const Navbar: React.FC = () => {
           </ul>
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden min-[992px]:block">
+        {/* Theme Toggle & CTA Button */}
+        <div className="hidden min-[992px]:flex items-center gap-4">
+          <button
+            onClick={toggleTheme}
+            className="flex items-center justify-center w-10 h-10 rounded-full border border-border-light text-text-dark bg-bg-card hover:bg-bg-card-hover hover:text-accent hover:border-accent/40 shadow-subtle transition-all duration-150 ease-out cursor-pointer outline-none"
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+          
           <Link to="/contact">
             <Button variant="primary" icon={<ArrowRight size={16} />}>
               Request Review
@@ -384,14 +395,24 @@ export const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="block min-[992px]:hidden bg-transparent border-none text-text-dark cursor-pointer outline-none"
-          onClick={toggleMenu}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Actions */}
+        <div className="flex min-[992px]:hidden items-center gap-3.5">
+          <button
+            onClick={toggleTheme}
+            className="flex items-center justify-center w-9 h-9 rounded-full border border-border-light text-text-dark bg-bg-card hover:text-accent shadow-subtle transition-all duration-150 ease-out cursor-pointer outline-none"
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+          </button>
+
+          <button
+            className="bg-transparent border-none text-text-dark cursor-pointer outline-none"
+            onClick={toggleMenu}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer Menu with Accordions */}

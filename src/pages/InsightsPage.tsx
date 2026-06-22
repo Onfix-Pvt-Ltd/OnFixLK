@@ -79,7 +79,7 @@ export const InsightsPage: React.FC = () => {
                   <h3 className="text-[1.6rem] max-[767px]:text-[1.3rem] font-extrabold leading-tight">Onfix DB Core v4.2 Release: Achieving Sub-Millisecond Concurrency</h3>
                 </div>
               </div>
-              <div className="p-[30px] bg-white">
+              <div className="p-[30px] bg-bg-card">
                 <p className="text-text-muted-dark text-[0.95rem] leading-[1.6] mb-6">
                   Our database systems engineering group has finished deploying the lockless FIFO database logging format across all global Anycast edge nodes. In live operational tests across 10,000 concurrent writes/sec, this architecture reduced write processing latencies to an average of 0.8ms, resolving legacy locking bottlenecks completely.
                 </p>

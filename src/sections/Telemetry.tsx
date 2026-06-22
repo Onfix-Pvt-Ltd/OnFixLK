@@ -25,7 +25,7 @@ export const Telemetry: React.FC = () => {
         setLoading(false);
       }
     };
-    
+
     fetchInitialMetrics();
 
     const interval = setInterval(() => {
@@ -52,12 +52,12 @@ export const Telemetry: React.FC = () => {
   };
 
   return (
-    <section id="telemetry" className="bg-gradient-to-br from-[#f8f8f8] to-[#f0f0f0] border-t border-b border-black/7 relative z-5 section">
+    <section id="telemetry" className="bg-gradient-to-br from-bg-light to-bg-card-hover/20 border-t border-b border-border-light relative z-5 section">
       <div className="container">
         <div className="section-header">
-          <span className="section-pretitle">INFRASTRUCTURE STATUS</span>
-          <h2 className="section-title text-gradient-light">Live Node Telemetry</h2>
-          <p className="section-subtitle">
+          <span className="section-pretitle text-accent">INFRASTRUCTURE STATUS</span>
+          <h2 className="section-title text-text-dark">Live Node Telemetry</h2>
+          <p className="section-subtitle text-text-muted-dark">
             Real-time infrastructure health and transactional throughput monitored across all global active endpoints.
           </p>
         </div>
@@ -71,71 +71,71 @@ export const Telemetry: React.FC = () => {
 
           <div className="grid grid-cols-2 max-[575px]:grid-cols-1 gap-6 max-[1199px]:gap-5 max-[575px]:gap-4">
             {/* Metric Card 1: Active Terminals */}
-            <Card variant="dark" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] !bg-white !border !border-black/7 !shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
+            <Card variant="light" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] border border-border-light shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
               <div className="flex items-center gap-3 mb-4">
                 <Radio size={20} className="inline-flex text-[#10B981]" />
-                <span className="text-[0.72rem] font-[750] uppercase text-[#888] tracking-[0.5px]">Active Terminal Nodes</span>
+                <span className="text-[0.72rem] font-[750] uppercase text-text-muted-dark tracking-[0.5px]">Active Terminal Nodes</span>
               </div>
               {loading ? (
-                <div className="text-[1.4rem] text-[#aaa] py-2">...</div>
+                <div className="text-[1.4rem] text-text-muted-dark py-2">...</div>
               ) : (
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-[1.8rem] font-[850] text-[#111111] tracking-[-0.5px] font-mono">{formatNumber(metrics.activeTerminals)}</span>
+                  <span className="text-[1.8rem] font-[850] text-text-dark tracking-[-0.5px] font-mono">{formatNumber(metrics.activeTerminals)}</span>
                   <span className="text-[0.68rem] font-[850] p-[4px_10px] rounded-pill uppercase tracking-[0.5px] whitespace-nowrap text-[#059669] bg-[#10b981]/8 border border-[#10b981]/18">● Live</span>
                 </div>
               )}
-              <div className="text-[0.78rem] text-[#999] mt-auto border-t border-black/6 pt-3">Online client terminals synchronized.</div>
+              <div className="text-[0.78rem] text-text-muted-dark mt-auto border-t border-border-light pt-3">Online client terminals synchronized.</div>
             </Card>
 
             {/* Metric Card 2: Transactions */}
-            <Card variant="dark" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] !bg-white !border !border-black/7 !shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
+            <Card variant="light" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] border border-border-light shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
               <div className="flex items-center gap-3 mb-4">
                 <Activity size={20} className="inline-flex text-accent" />
-                <span className="text-[0.72rem] font-[750] uppercase text-[#888] tracking-[0.5px]">Transactions This Month</span>
+                <span className="text-[0.72rem] font-[750] uppercase text-text-muted-dark tracking-[0.5px]">Transactions This Month</span>
               </div>
               {loading ? (
-                <div className="text-[1.4rem] text-[#aaa] py-2">...</div>
+                <div className="text-[1.4rem] text-text-muted-dark py-2">...</div>
               ) : (
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-[1.8rem] font-[850] text-[#111111] tracking-[-0.5px] font-mono">{formatNumber(metrics.monthlyTransactions)}</span>
+                  <span className="text-[1.8rem] font-[850] text-text-dark tracking-[-0.5px] font-mono">{formatNumber(metrics.monthlyTransactions)}</span>
                   <span className="text-[0.68rem] font-[850] p-[4px_10px] rounded-pill uppercase tracking-[0.5px] whitespace-nowrap text-accent bg-accent/8 border border-accent/18 animate-pulse">▲ Ticking</span>
                 </div>
               )}
-              <div className="text-[0.78rem] text-[#999] mt-auto border-t border-black/6 pt-3">Aggregated card, invoice, and QR charges.</div>
+              <div className="text-[0.78rem] text-text-muted-dark mt-auto border-t border-border-light pt-3">Aggregated card, invoice, and QR charges.</div>
             </Card>
 
             {/* Metric Card 3: Uptime */}
-            <Card variant="dark" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] !bg-white !border !border-black/7 !shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
+            <Card variant="light" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] border border-border-light shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
               <div className="flex items-center gap-3 mb-4">
                 <Cpu size={20} className="inline-flex text-[#10B981]" />
-                <span className="text-[0.72rem] font-[750] uppercase text-[#888] tracking-[0.5px]">System SLA & Uptime</span>
+                <span className="text-[0.72rem] font-[750] uppercase text-text-muted-dark tracking-[0.5px]">System SLA & Uptime</span>
               </div>
               {loading ? (
-                <div className="text-[1.4rem] text-[#aaa] py-2">...</div>
+                <div className="text-[1.4rem] text-text-muted-dark py-2">...</div>
               ) : (
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-[1.8rem] font-[850] text-[#111111] tracking-[-0.5px] font-mono">{metrics.serverUptime}%</span>
+                  <span className="text-[1.8rem] font-[850] text-text-dark tracking-[-0.5px] font-mono">{metrics.serverUptime}%</span>
                   <span className="text-[0.68rem] font-[850] p-[4px_10px] rounded-pill uppercase tracking-[0.5px] whitespace-nowrap text-[#059669] bg-[#10b981]/8 border border-[#10b981]/18">Uptime</span>
                 </div>
               )}
-              <div className="text-[0.78rem] text-[#999] mt-auto border-t border-black/6 pt-3">Global clusters load-balanced failover index.</div>
+              <div className="text-[0.78rem] text-text-muted-dark mt-auto border-t border-border-light pt-3">Global clusters load-balanced failover index.</div>
             </Card>
 
             {/* Metric Card 4: Latency */}
-            <Card variant="dark" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] !bg-white !border !border-black/7 !shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
+            <Card variant="light" hoverEffect={false} className="flex flex-col justify-between min-h-[190px] max-[575px]:min-h-[160px] border border-border-light shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:!border-accent hover:!shadow-[0_8px_32px_rgba(255,94,0,0.10)]">
               <div className="flex items-center gap-3 mb-4">
                 <Clock size={20} className="inline-flex text-accent" />
-                <span className="text-[0.72rem] font-[750] uppercase text-[#888] tracking-[0.5px]">Avg API Node Latency</span>
+                <span className="text-[0.72rem] font-[750] uppercase text-text-muted-dark tracking-[0.5px]">Avg API Node Latency</span>
               </div>
               {loading ? (
-                <div className="text-[1.4rem] text-[#aaa] py-2">...</div>
+                <div className="text-[1.4rem] text-text-muted-dark py-2">...</div>
               ) : (
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-[1.8rem] font-[850] text-[#111111] tracking-[-0.5px] font-mono">{metrics.apiLatencyMs}ms</span>
+                  <span className="text-[1.8rem] font-[850] text-text-dark tracking-[-0.5px] font-mono">{metrics.apiLatencyMs}ms</span>
                   <span className="text-[0.68rem] font-[850] p-[4px_10px] rounded-pill uppercase tracking-[0.5px] whitespace-nowrap text-[#059669] bg-[#10b981]/8 border border-[#10b981]/18">Optimal</span>
                 </div>
               )}
-              <div className="text-[0.78rem] text-[#999] mt-auto border-t border-black/6 pt-3">Anycast edge gateway roundtrip latency.</div>
+              <div className="text-[0.78rem] text-text-muted-dark mt-auto border-t border-border-light pt-3">Anycast edge gateway roundtrip latency.</div>
             </Card>
           </div>
         </div>

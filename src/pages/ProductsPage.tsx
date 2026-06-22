@@ -138,7 +138,7 @@ export const ProductsPage: React.FC = () => {
               <ShoppingBag size={18} className="text-accent" />
               <span>Flagship Hospitality POS</span>
             </div>
-            <h2 className="text-[2.2rem] font-extrabold mb-5 tracking-[-0.5px] text-[#111]">ONFIX POS Core</h2>
+            <h2 className="text-[2.2rem] font-extrabold mb-5 tracking-[-0.5px] text-text-dark">ONFIX POS Core</h2>
             <p className="text-[1.15rem] font-medium text-text-muted-dark leading-[1.7] mb-5">
               A high-availability point-of-sale database and terminal interface built specifically for luxury hospitality and multi-location operations.
             </p>
@@ -154,24 +154,24 @@ export const ProductsPage: React.FC = () => {
 
           <div className="max-[991px]:order-2">
             <Card variant="light" hoverEffect={false} className="!p-0 overflow-hidden shadow-medium">
-              <div className="bg-[#f0f0f0] px-4 py-3 flex items-center gap-2 border-b border-[#e0e0e0]">
+              <div className="bg-bg-light px-4 py-3 flex items-center gap-2 border-b border-border-light">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
-                <span className="text-[0.8rem] font-semibold text-[#666] ml-2 font-body">Tableside POS Terminal Simulator</span>
+                <span className="text-[0.8rem] font-semibold text-text-muted-dark ml-2 font-body">Tableside POS Terminal Simulator</span>
               </div>
-              <div className="p-6 bg-white">
-                <p className="text-[0.85rem] text-[#555] mb-4 font-medium">Click a hospitality item to charge Suite 104 in real-time:</p>
+              <div className="p-6 bg-bg-card">
+                <p className="text-[0.85rem] text-text-muted-dark mb-4 font-medium">Click a hospitality item to charge Suite 104 in real-time:</p>
                 <div className="grid grid-cols-1 gap-3 mb-5">
-                  <button onClick={() => handleSimulateOrder('Dry-Aged Wagyu Ribeye', '$95.00')} disabled={isProcessingOrder} className="flex justify-between items-center px-4.5 py-3.5 border border-border-light bg-[#fafafa] rounded-medium font-semibold text-[0.9rem] text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-white hover:border-accent hover:shadow-[0_4px_12px_rgba(255,94,0,0.1)] hover:-translate-y-0.5">
+                  <button onClick={() => handleSimulateOrder('Dry-Aged Wagyu Ribeye', '$95.00')} disabled={isProcessingOrder} className="flex justify-between items-center px-4.5 py-3.5 border border-border-light bg-bg-light rounded-medium font-semibold text-[0.9rem] text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-bg-card hover:border-accent hover:shadow-[0_4px_12px_rgba(255,94,0,0.1)] hover:-translate-y-0.5">
                     <span>🥩 Wagyu Ribeye</span>
                     <span className="text-accent font-mono font-bold">$95.00</span>
                   </button>
-                  <button onClick={() => handleSimulateOrder('Truffle Fries & Aioli', '$18.00')} disabled={isProcessingOrder} className="flex justify-between items-center px-4.5 py-3.5 border border-border-light bg-[#fafafa] rounded-medium font-semibold text-[0.9rem] text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-white hover:border-accent hover:shadow-[0_4px_12px_rgba(255,94,0,0.1)] hover:-translate-y-0.5">
+                  <button onClick={() => handleSimulateOrder('Truffle Fries & Aioli', '$18.00')} disabled={isProcessingOrder} className="flex justify-between items-center px-4.5 py-3.5 border border-border-light bg-bg-light rounded-medium font-semibold text-[0.9rem] text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-bg-card hover:border-accent hover:shadow-[0_4px_12px_rgba(255,94,0,0.1)] hover:-translate-y-0.5">
                     <span>🍟 Truffle Fries</span>
                     <span className="text-accent font-mono font-bold">$18.00</span>
                   </button>
-                  <button onClick={() => handleSimulateOrder('Smoked Negroni Special', '$22.00')} disabled={isProcessingOrder} className="flex justify-between items-center px-4.5 py-3.5 border border-border-light bg-[#fafafa] rounded-medium font-semibold text-[0.9rem] text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-white hover:border-accent hover:shadow-[0_4px_12px_rgba(255,94,0,0.1)] hover:-translate-y-0.5">
+                  <button onClick={() => handleSimulateOrder('Smoked Negroni Special', '$22.00')} disabled={isProcessingOrder} className="flex justify-between items-center px-4.5 py-3.5 border border-border-light bg-bg-light rounded-medium font-semibold text-[0.9rem] text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-bg-card hover:border-accent hover:shadow-[0_4px_12px_rgba(255,94,0,0.1)] hover:-translate-y-0.5">
                     <span>🍹 Smoked Negroni</span>
                     <span className="text-accent font-mono font-bold">$22.00</span>
                   </button>
@@ -261,7 +261,7 @@ export const ProductsPage: React.FC = () => {
               <Database size={18} className="text-accent" />
               <span>Proprietary Database Technology</span>
             </div>
-            <h2 className="text-[2.2rem] font-extrabold mb-5 tracking-[-0.5px] text-[#111]">Onfix DB Core</h2>
+            <h2 className="text-[2.2rem] font-extrabold mb-5 tracking-[-0.5px] text-text-dark">Onfix DB Core</h2>
             <p className="text-[1.15rem] font-medium text-text-muted-dark leading-[1.7] mb-5">
               An ultra-low latency, transaction-ordered ledger database engine engineered for high-concurrency operations.
             </p>
@@ -277,41 +277,41 @@ export const ProductsPage: React.FC = () => {
 
           <div className="max-[991px]:order-2">
             <Card variant="light" hoverEffect={false} className="!p-0 overflow-hidden shadow-medium">
-              <div className="bg-[#f0f0f0] px-4 py-3 flex items-center gap-2 border-b border-[#e0e0e0]">
+              <div className="bg-bg-light px-4 py-3 flex items-center gap-2 border-b border-border-light">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
                 <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
-                <span className="text-[0.8rem] font-semibold text-[#666] ml-2 font-body">Latency Comparison (Lower is Better)</span>
+                <span className="text-[0.8rem] font-semibold text-text-muted-dark ml-2 font-body">Latency Comparison (Lower is Better)</span>
               </div>
-              <div className="p-6 bg-white">
+              <div className="p-6 bg-bg-card">
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-2">
-                    <div className="flex justify-between text-[0.85rem] font-semibold text-[#333]">
+                    <div className="flex justify-between text-[0.85rem] font-semibold text-text-dark">
                       <span className="font-mono">Onfix DB Core</span>
                       <span className="text-accent font-mono">0.8ms</span>
                     </div>
-                    <div className="h-[14px] bg-[#f0f0f0] rounded-pill overflow-hidden">
+                    <div className="h-[14px] bg-bg-light rounded-pill overflow-hidden">
                       <div className="h-full rounded-pill bg-gradient-to-r from-accent to-[#FF8D4D] shadow-[0_0_10px_rgba(255,94,0,0.4)]" style={{ width: '4%' }}></div>
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <div className="flex justify-between text-[0.85rem] font-semibold text-[#333]">
+                    <div className="flex justify-between text-[0.85rem] font-semibold text-text-dark">
                       <span className="font-mono">DynamoDB (Global Tables)</span>
                       <span className="text-accent font-mono">12.2ms</span>
                     </div>
-                    <div className="h-[14px] bg-[#f0f0f0] rounded-pill overflow-hidden">
-                      <div className="h-full rounded-pill bg-[#a3a3a3]" style={{ width: '48%' }}></div>
+                    <div className="h-[14px] bg-bg-light rounded-pill overflow-hidden">
+                      <div className="h-full rounded-pill bg-[#a3a3a3] dark:bg-[#404040]" style={{ width: '48%' }}></div>
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <div className="flex justify-between text-[0.85rem] font-semibold text-[#333]">
+                    <div className="flex justify-between text-[0.85rem] font-semibold text-text-dark">
                       <span className="font-mono">PostgreSQL (Replicated)</span>
                       <span className="text-accent font-mono">24.5ms</span>
                     </div>
-                    <div className="h-[14px] bg-[#f0f0f0] rounded-pill overflow-hidden">
-                      <div className="h-full rounded-pill bg-[#a3a3a3]" style={{ width: '90%' }}></div>
+                    <div className="h-[14px] bg-bg-light rounded-pill overflow-hidden">
+                      <div className="h-full rounded-pill bg-[#a3a3a3] dark:bg-[#404040]" style={{ width: '90%' }}></div>
                     </div>
                   </div>
                 </div>
@@ -379,50 +379,50 @@ export const ProductsPage: React.FC = () => {
         <div className="container">
           <div className="text-center mb-12">
             <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">FEATURES MATRIX</span>
-            <h2 className="text-[2.5rem] font-heading font-bold mb-4 text-[#111]">Ecosystem Specifications</h2>
-            <p className="max-w-[700px] mx-auto text-[#666] text-lg leading-[1.6]">
+            <h2 className="text-[2.5rem] font-heading font-bold mb-4 text-text-dark">Ecosystem Specifications</h2>
+            <p className="max-w-[700px] mx-auto text-text-muted-dark text-lg leading-[1.6]">
               Detailed technical breakdown of how Onfix compares to legacy enterprise systems.
             </p>
           </div>
 
-          <div className="w-full overflow-x-auto mt-[50px] rounded-medium shadow-medium bg-white border border-border-light">
+          <div className="w-full overflow-x-auto mt-[50px] rounded-medium shadow-medium bg-bg-card border border-border-light">
             <table className="w-full border-collapse text-left text-[0.95rem]">
               <thead>
                 <tr>
-                  <th className="bg-[#fafafa] text-text-dark font-bold p-[20px_24px] border-b-2 border-border-light font-heading">Technical Metric</th>
-                  <th className="bg-[#fafafa] text-text-dark font-bold p-[20px_24px] border-b-2 border-border-light font-heading">ONFIX System Core</th>
-                  <th className="bg-[#fafafa] text-text-dark font-bold p-[20px_24px] border-b-2 border-border-light font-heading">Standard Enterprise POS</th>
-                  <th className="bg-[#fafafa] text-text-dark font-bold p-[20px_24px] border-b-2 border-border-light font-heading">Legacy Corporate ERP</th>
+                  <th className="bg-bg-light text-text-dark font-bold p-[20px_24px] border-b-2 border-border-light font-heading">Technical Metric</th>
+                  <th className="bg-bg-light text-text-dark font-bold p-[20px_24px] border-b-2 border-border-light font-heading">ONFIX System Core</th>
+                  <th className="bg-bg-light text-text-dark font-bold p-[20px_24px] border-b-2 border-border-light font-heading">Standard Enterprise POS</th>
+                  <th className="bg-bg-light text-text-dark font-bold p-[20px_24px] border-b-2 border-border-light font-heading">Legacy Corporate ERP</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="hover:bg-[#fafafa]">
+                <tr className="hover:bg-bg-light">
                   <td className="p-[20px_24px] border-b border-border-light font-semibold text-text-dark">Avg Write Latency</td>
-                  <td className="p-[20px_24px] border-b border-border-light text-accent bg-accent/2"><strong>&lt; 1.5ms</strong> (Edge-Cached)</td>
+                  <td className="p-[20px_24px] border-b border-border-light text-accent bg-accent/4"><strong>&lt; 1.5ms</strong> (Edge-Cached)</td>
                   <td className="p-[20px_24px] border-b border-border-light text-text-muted-dark">15ms - 40ms</td>
                   <td className="p-[20px_24px] border-b border-border-light text-text-muted-dark">50ms - 200ms</td>
                 </tr>
-                <tr className="hover:bg-[#fafafa]">
+                <tr className="hover:bg-bg-light">
                   <td className="p-[20px_24px] border-b border-border-light font-semibold text-text-dark">ACID Compliance</td>
-                  <td className="p-[20px_24px] border-b border-border-light text-accent bg-accent/2"><strong>Strict Serialized</strong> (FIFO engine)</td>
+                  <td className="p-[20px_24px] border-b border-border-light text-accent bg-accent/4"><strong>Strict Serialized</strong> (FIFO engine)</td>
                   <td className="p-[20px_24px] border-b border-border-light text-text-muted-dark">Varies (Eventually consistent)</td>
                   <td className="p-[20px_24px] border-b border-border-light text-text-muted-dark">Lock-based Serialized</td>
                 </tr>
-                <tr className="hover:bg-[#fafafa]">
+                <tr className="hover:bg-bg-light">
                   <td className="p-[20px_24px] border-b border-border-light font-semibold text-text-dark">Offline Mode</td>
-                  <td className="p-[20px_24px] border-b border-border-light text-accent bg-accent/2"><strong>Full Sync-Back</strong> (Local node buffer)</td>
+                  <td className="p-[20px_24px] border-b border-border-light text-accent bg-accent/4"><strong>Full Sync-Back</strong> (Local node buffer)</td>
                   <td className="p-[20px_24px] border-b border-border-light text-text-muted-dark">Read-only mode</td>
                   <td className="p-[20px_24px] border-b border-border-light text-text-muted-dark">None (Cloud dependent)</td>
                 </tr>
-                <tr className="hover:bg-[#fafafa]">
+                <tr className="hover:bg-bg-light">
                   <td className="p-[20px_24px] border-b border-border-light font-semibold text-text-dark">SLA Uptime Commitment</td>
-                  <td className="p-[20px_24px] border-b border-border-light text-accent bg-accent/2"><strong>99.999%</strong></td>
+                  <td className="p-[20px_24px] border-b border-border-light text-accent bg-accent/4"><strong>99.999%</strong></td>
                   <td className="p-[20px_24px] border-b border-border-light text-text-muted-dark">99.9%</td>
                   <td className="p-[20px_24px] border-b border-border-light text-text-muted-dark">99.5%</td>
                 </tr>
-                <tr className="hover:bg-[#fafafa]">
+                <tr className="hover:bg-bg-light">
                   <td className="p-[20px_24px] border-b-0 font-semibold text-text-dark">Security Frameworks</td>
-                  <td className="p-[20px_24px] border-b-0 text-accent bg-accent/2"><strong>PCI-DSS Level 1 & SOC 2 Type II</strong></td>
+                  <td className="p-[20px_24px] border-b-0 text-accent bg-accent/4"><strong>PCI-DSS Level 1 & SOC 2 Type II</strong></td>
                   <td className="p-[20px_24px] border-b-0 text-text-muted-dark">PCI-DSS Level 2</td>
                   <td className="p-[20px_24px] border-b-0 text-text-muted-dark">Self-Assessed Compliance</td>
                 </tr>

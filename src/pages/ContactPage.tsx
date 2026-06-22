@@ -152,7 +152,7 @@ export const ContactPage: React.FC = () => {
                       name="name"
                       required
                       placeholder="Alan Turing"
-                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-white border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
+                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-bg-card border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
                       value={formData.name}
                       onChange={handleChange}
                       disabled={status === 'submitting'}
@@ -167,7 +167,7 @@ export const ContactPage: React.FC = () => {
                       name="email"
                       required
                       placeholder="turing@onfix.lk"
-                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-white border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
+                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-bg-card border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
                       value={formData.email}
                       onChange={handleChange}
                       disabled={status === 'submitting'}
@@ -181,7 +181,7 @@ export const ContactPage: React.FC = () => {
                       id="company"
                       name="company"
                       placeholder="Bletchley Park Ltd"
-                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-white border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
+                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-bg-card border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
                       value={formData.company}
                       onChange={handleChange}
                       disabled={status === 'submitting'}
@@ -193,7 +193,7 @@ export const ContactPage: React.FC = () => {
                     <select
                       id="interest"
                       name="interest"
-                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-white border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
+                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-bg-card border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
                       value={formData.interest}
                       onChange={handleChange}
                       disabled={status === 'submitting'}
@@ -213,7 +213,7 @@ export const ContactPage: React.FC = () => {
                       required
                       rows={4}
                       placeholder="Please details your locations count, write locks, transaction volume, or latency issues..."
-                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-white border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
+                      className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-bg-card border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
                       value={formData.message}
                       onChange={handleChange}
                       disabled={status === 'submitting'}
@@ -239,13 +239,13 @@ export const ContactPage: React.FC = () => {
             <h2 className="text-[1.25rem] font-extrabold mb-6 text-text-dark border-b-2 border-border-light pb-3 uppercase tracking-[0.5px]">Proposal Estimator Widget</h2>
             
             <Card variant="light" hoverEffect={false} className="!p-0 shadow-medium border border-border-light">
-              <div className="bg-[#fafafa] px-6 py-4 font-[750] text-[0.8rem] tracking-[1px] text-[#888] flex items-center gap-2.5 border-b border-border-light">
+              <div className="bg-bg-light px-6 py-4 font-[750] text-[0.8rem] tracking-[1px] text-text-muted-dark flex items-center gap-2.5 border-b border-border-light">
                 <Sparkles size={16} className="text-accent" />
                 <span>DYNAMIC DEPLOYMENT EVALUATOR</span>
               </div>
 
               {/* Step indicator bar */}
-              <div className="flex items-center justify-between px-6 py-4 bg-[#fafafa] border-b border-border-light">
+              <div className="flex items-center justify-between px-6 py-4 bg-bg-light border-b border-border-light">
                 <span className={`text-[0.75rem] font-bold text-[#a3a3a3] uppercase tracking-[0.5px] ${estimatorStep >= 1 ? 'text-accent' : ''}`}>1. Scope</span>
                 <span className="grow h-[1px] bg-border-light mx-3"></span>
                 <span className={`text-[0.75rem] font-bold text-[#a3a3a3] uppercase tracking-[0.5px] ${estimatorStep >= 2 ? 'text-accent' : ''}`}>2. Volume</span>
@@ -253,7 +253,7 @@ export const ContactPage: React.FC = () => {
                 <span className={`text-[0.75rem] font-bold text-[#a3a3a3] uppercase tracking-[0.5px] ${estimatorStep >= 3 ? 'text-accent' : ''}`}>3. Analysis</span>
               </div>
 
-              <div className="p-[30px] bg-white">
+              <div className="p-[30px] bg-bg-card">
                 
                 {/* Step 1: Industry Scope */}
                 {estimatorStep === 1 && (
@@ -264,8 +264,8 @@ export const ContactPage: React.FC = () => {
                     <div className="flex flex-col gap-3">
                       <button 
                         onClick={() => setEstIndustry('hospitality')} 
-                        className={`flex flex-col text-left p-[16px_20px] border border-border-light bg-[#fafafa] rounded-medium cursor-pointer outline-none font-body transition-all duration-150 ease-out hover:bg-white hover:border-[#cbd5e1] hover:-translate-y-0.5 ${
-                          estIndustry === 'hospitality' ? 'bg-accent/2 border-accent shadow-[0_0_12px_rgba(255,94,0,0.08)]' : ''
+                        className={`flex flex-col text-left p-[16px_20px] border border-border-light bg-bg-light rounded-medium cursor-pointer outline-none font-body transition-all duration-150 ease-out hover:bg-bg-card hover:border-[#cbd5e1] hover:-translate-y-0.5 ${
+                          estIndustry === 'hospitality' ? 'bg-accent/4 border-accent shadow-[0_0_12px_rgba(255,94,0,0.08)]' : ''
                         }`}
                       >
                         <span className="block font-[750] text-[0.95rem] text-text-dark mb-1">Hospitality POS & PMS Core</span>
@@ -274,8 +274,8 @@ export const ContactPage: React.FC = () => {
 
                       <button 
                         onClick={() => setEstIndustry('procurement')} 
-                        className={`flex flex-col text-left p-[16px_20px] border border-border-light bg-[#fafafa] rounded-medium cursor-pointer outline-none font-body transition-all duration-150 ease-out hover:bg-white hover:border-[#cbd5e1] hover:-translate-y-0.5 ${
-                          estIndustry === 'procurement' ? 'bg-accent/2 border-accent shadow-[0_0_12px_rgba(255,94,0,0.08)]' : ''
+                        className={`flex flex-col text-left p-[16px_20px] border border-border-light bg-bg-light rounded-medium cursor-pointer outline-none font-body transition-all duration-150 ease-out hover:bg-bg-card hover:border-[#cbd5e1] hover:-translate-y-0.5 ${
+                          estIndustry === 'procurement' ? 'bg-accent/4 border-accent shadow-[0_0_12px_rgba(255,94,0,0.08)]' : ''
                         }`}
                       >
                         <span className="block font-[750] text-[0.95rem] text-text-dark mb-1">Enterprise Cloud ERP</span>
@@ -284,8 +284,8 @@ export const ContactPage: React.FC = () => {
 
                       <button 
                         onClick={() => setEstIndustry('api')} 
-                        className={`flex flex-col text-left p-[16px_20px] border border-border-light bg-[#fafafa] rounded-medium cursor-pointer outline-none font-body transition-all duration-150 ease-out hover:bg-white hover:border-[#cbd5e1] hover:-translate-y-0.5 ${
-                          estIndustry === 'api' ? 'bg-accent/2 border-accent shadow-[0_0_12px_rgba(255,94,0,0.08)]' : ''
+                        className={`flex flex-col text-left p-[16px_20px] border border-border-light bg-bg-light rounded-medium cursor-pointer outline-none font-body transition-all duration-150 ease-out hover:bg-bg-card hover:border-[#cbd5e1] hover:-translate-y-0.5 ${
+                          estIndustry === 'api' ? 'bg-accent/4 border-accent shadow-[0_0_12px_rgba(255,94,0,0.08)]' : ''
                         }`}
                       >
                         <span className="block font-[750] text-[0.95rem] text-text-dark mb-1">Secure API Gateway</span>
@@ -310,14 +310,14 @@ export const ContactPage: React.FC = () => {
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-3">
                         <label className="flex items-center gap-2 text-[0.85rem] font-bold text-text-dark"><Sliders size={14} /> Active Locations / Branches</label>
-                        <div className="grid grid-cols-4 max-[767px]:grid-cols-2 bg-[#f5f5f5] p-1 rounded-pill max-[767px]:rounded-medium gap-1">
+                        <div className="grid grid-cols-4 max-[767px]:grid-cols-2 bg-bg-light p-1 rounded-pill max-[767px]:rounded-medium gap-1">
                           {['1-5', '6-20', '21-100', '100+'].map((opt) => (
                             <button 
                               key={opt}
                               type="button"
                               onClick={() => setEstLocations(opt)} 
-                              className={`background-transparent border-none py-2.5 font-semibold text-[0.85rem] text-[#666] rounded-pill max-[767px]:rounded-medium cursor-pointer text-center transition-all duration-150 ease-out hover:text-text-dark ${
-                                estLocations === opt ? 'bg-white text-accent shadow-subtle font-bold' : ''
+                              className={`background-transparent border-none py-2.5 font-semibold text-[0.85rem] text-text-muted-dark rounded-pill max-[767px]:rounded-medium cursor-pointer text-center transition-all duration-150 ease-out hover:text-text-dark ${
+                                estLocations === opt ? 'bg-bg-card text-accent shadow-subtle font-bold' : ''
                               }`}
                             >
                               {opt}
@@ -328,14 +328,14 @@ export const ContactPage: React.FC = () => {
 
                       <div className="flex flex-col gap-3" style={{ marginTop: '24px' }}>
                         <label className="flex items-center gap-2 text-[0.85rem] font-bold text-text-dark"><Layers size={14} /> Daily Transaction Volume</label>
-                        <div className="grid grid-cols-4 max-[767px]:grid-cols-2 bg-[#f5f5f5] p-1 rounded-pill max-[767px]:rounded-medium gap-1">
+                        <div className="grid grid-cols-4 max-[767px]:grid-cols-2 bg-bg-light p-1 rounded-pill max-[767px]:rounded-medium gap-1">
                           {['<1k', '1k-10k', '10k-50k', '50k+'].map((opt) => (
                             <button 
                               key={opt}
                               type="button"
                               onClick={() => setEstTransactions(opt)} 
-                              className={`background-transparent border-none py-2.5 font-semibold text-[0.85rem] text-[#666] rounded-pill max-[767px]:rounded-medium cursor-pointer text-center transition-all duration-150 ease-out hover:text-text-dark ${
-                                estTransactions === opt ? 'bg-white text-accent shadow-subtle font-bold' : ''
+                              className={`background-transparent border-none py-2.5 font-semibold text-[0.85rem] text-text-muted-dark rounded-pill max-[767px]:rounded-medium cursor-pointer text-center transition-all duration-150 ease-out hover:text-text-dark ${
+                                estTransactions === opt ? 'bg-bg-card text-accent shadow-subtle font-bold' : ''
                               }`}
                             >
                               {opt}
@@ -346,7 +346,7 @@ export const ContactPage: React.FC = () => {
                     </div>
 
                     <div className="mt-[30px] flex justify-between border-t border-border-light pt-5">
-                      <button onClick={() => setEstimatorStep(1)} className="bg-transparent border border-border-light font-bold text-[0.85rem] px-5 py-2.5 rounded-pill text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-[#f5f5f5] hover:border-[#d4d4d4]">
+                      <button onClick={() => setEstimatorStep(1)} className="bg-transparent border border-border-light font-bold text-[0.85rem] px-5 py-2.5 rounded-pill text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-bg-light hover:border-border-light">
                         Back
                       </button>
                       <Button onClick={() => setEstimatorStep(3)} variant="accent" icon={<ArrowRight size={14} />}>
@@ -362,7 +362,7 @@ export const ContactPage: React.FC = () => {
                     <h4 className="text-[1.15rem] font-extrabold text-[#10b981] mb-1">Audit Evaluation Generated</h4>
                     <p className="text-[0.85rem] text-text-muted-dark mb-6">Recommended infrastructure target configured based on scale metrics.</p>
 
-                    <div className="bg-[#fafafa] border border-border-light rounded-medium overflow-hidden mt-4">
+                    <div className="bg-bg-light border border-border-light rounded-medium overflow-hidden mt-4">
                       <div className="flex justify-between items-center px-5 py-4 border-b border-border-light">
                         <span className="text-[0.8rem] text-text-muted-dark font-semibold">Recommended Deployment</span>
                         <span className="font-bold text-[0.9rem] text-text-dark font-mono">{estResult.recommendedCluster}</span>
@@ -383,14 +383,14 @@ export const ContactPage: React.FC = () => {
                         <span className="font-bold text-[0.9rem] text-text-dark font-mono">{estResult.auditTimeline}</span>
                       </div>
 
-                      <div className="flex gap-2.5 px-5 py-4 bg-accent/2 text-[0.8rem] text-text-muted-dark leading-[1.5]">
+                      <div className="flex gap-2.5 px-5 py-4 bg-accent/4 text-[0.8rem] text-text-muted-dark leading-[1.5]">
                         <HelpCircle size={14} className="shrink-0 text-accent" />
                         <span>{estResult.description}</span>
                       </div>
                     </div>
 
                     <div className="mt-[30px] flex justify-between border-t border-border-light pt-5 max-[767px]:w-full [&>button]:max-[767px]:w-full">
-                      <button onClick={() => setEstimatorStep(2)} className="bg-transparent border border-border-light font-bold text-[0.85rem] px-5 py-2.5 rounded-pill text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-[#f5f5f5] hover:border-[#d4d4d4]">
+                      <button onClick={() => setEstimatorStep(2)} className="bg-transparent border border-border-light font-bold text-[0.85rem] px-5 py-2.5 rounded-pill text-text-dark cursor-pointer transition-all duration-150 ease-out hover:bg-bg-light hover:border-border-light">
                         Back
                       </button>
                       <button 
@@ -412,7 +412,7 @@ export const ContactPage: React.FC = () => {
               </div>
             </Card>
 
-            <div className="mt-6 bg-white border border-border-light p-5 rounded-medium flex gap-4">
+            <div className="mt-6 bg-bg-card border border-border-light p-5 rounded-medium flex gap-4">
               <ShieldCheck className="text-accent shrink-0" size={24} />
               <div>
                 <h4 className="text-[0.95rem] font-[750] text-text-dark mb-1">Continuous NDA Handshakes</h4>

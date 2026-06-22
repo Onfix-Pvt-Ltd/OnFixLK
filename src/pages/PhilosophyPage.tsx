@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { SEOHelper } from '../components/common/SEOHelper';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
-import { 
-  Server, Database, Shield, Terminal, 
+import {
+  Server, Database, Shield, Terminal,
   Activity, Play, CheckCircle2, ShieldAlert
 } from 'lucide-react';
 
@@ -13,7 +13,7 @@ export const PhilosophyPage: React.FC = () => {
 
   // Latency Tester State
   const [pingStatus, setPingStatus] = useState<'idle' | 'testing' | 'completed'>('idle');
-  const [nodePings, setNodePings] = useState<{[key: string]: number | string}>({
+  const [nodePings, setNodePings] = useState<{ [key: string]: number | string }>({
     colombo: '-',
     singapore: '-',
     tokyo: '-',
@@ -105,8 +105,8 @@ await onfixDb.transact({
 
   return (
     <div className="animate-fade">
-      <SEOHelper 
-        title="Philosophy & Infrastructure Core" 
+      <SEOHelper
+        title="Philosophy & Infrastructure Core"
         description="Learn about Onfix's architectural DNA, zero write-locks databases, global Anycast routing, and run a live edge latency check."
       />
 
@@ -126,19 +126,19 @@ await onfixDb.transact({
         <div className="container grid grid-cols-2 max-[991px]:grid-cols-1 gap-[60px] items-center">
           <div>
             <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">ENGINEERING PHILOSOPHY</span>
-            <h2 className="text-[2.2rem] font-extrabold mb-5 tracking-[-0.5px] text-text-dark">Zero Buffer. Zero Lag. Zero Excuses.</h2>
-            <p className="text-[1.2rem] leading-[1.7] text-text-muted-dark font-medium mb-5">
+            <h2 className="text-[1.8rem] font-extrabold mb-5 tracking-[-0.5px] text-text-dark">Zero Buffer. Zero Lag. Zero Excuses.</h2>
+            <p className="text-[0.95rem] leading-[1.7] text-text-muted-dark font-medium mb-5">
               At Onfix, we build the databases, compilers, and routing protocols ourselves. Our obsession with engineering efficiency means your POS never buffers, your stock is always synchronized, and your data is completely secure.
             </p>
             <p className="text-text-muted-dark leading-[1.7] text-[0.95rem] mb-6">
               Most enterprise tools rely on layers of outdated wrappers and API bridges. When network density rises, database rows lock up and transactions queue, creating processing lag. We bypass these limitations completely by writing lock-free FIFO storage layers that interface directly with the edge hardware.
             </p>
             <div className="grid grid-cols-2 gap-5 mt-10">
-              <div className="bg-white border border-border-light p-6 rounded-medium shadow-subtle">
+              <div className="bg-bg-card border border-border-light p-6 rounded-medium shadow-subtle">
                 <span className="block text-[1.8rem] font-[850] mb-2 text-accent">&lt; 15ms</span>
                 <span className="text-[0.8rem] font-semibold text-text-muted-dark uppercase tracking-[0.5px]">Global Terminal Latency</span>
               </div>
-              <div className="bg-white border border-border-light p-6 rounded-medium shadow-subtle">
+              <div className="bg-bg-card border border-border-light p-6 rounded-medium shadow-subtle">
                 <span className="block text-[1.8rem] font-[850] mb-2 text-accent">99.999%</span>
                 <span className="text-[0.8rem] font-semibold text-text-muted-dark uppercase tracking-[0.5px]">SLA Performance Target</span>
               </div>
@@ -146,13 +146,12 @@ await onfixDb.transact({
           </div>
 
           <div className="flex flex-col gap-4">
-            <div className="flex bg-[#f0f0f0] p-1 rounded-medium gap-1">
+            <div className="flex bg-bg-light p-1 rounded-medium gap-1">
               {consoleTabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`flex-1 flex items-center justify-center gap-2 bg-transparent border-none p-3 font-semibold text-[0.85rem] text-[#666] rounded-small cursor-pointer transition-all duration-150 ease-out hover:text-accent ${
-                    activeConsoleTab === tab.id ? '!bg-white !text-accent shadow-subtle' : ''
-                  }`}
+                  className={`flex-1 flex items-center justify-center gap-2 bg-transparent border-none p-3 font-semibold text-[0.85rem] text-[#666] rounded-small cursor-pointer transition-all duration-150 ease-out hover:text-accent ${activeConsoleTab === tab.id ? '!bg-bg-card !text-accent shadow-subtle' : ''
+                    }`}
                   onClick={() => setActiveConsoleTab(tab.id)}
                 >
                   {tab.icon}
@@ -176,7 +175,7 @@ await onfixDb.transact({
               <div className="p-6">
                 <h3 className="text-[1.25rem] font-bold mb-3 text-white">{currentTab.title}</h3>
                 <p className="text-[0.9rem] text-[#aaa] mb-6 leading-[1.6]">{currentTab.text}</p>
-                
+
                 <div className="bg-[#0d0d0d] p-4 rounded-medium border border-[#222] overflow-x-auto">
                   <pre className="m-0">
                     <code className="font-mono text-[0.8rem] text-[#ff8d4d] leading-[1.5]">{currentTab.code}</code>
@@ -206,7 +205,7 @@ await onfixDb.transact({
                 <Activity size={16} className="text-[#10b981]" />
                 <span>ACTIVE NODES PING MANAGER</span>
               </div>
-              
+
               <div className="flex flex-col">
                 {/* Colombo Node */}
                 <div className={`flex justify-between items-center px-6 py-4.5 border-b border-[#252525] transition-all duration-150 ease-out hover:bg-[#222] ${activePingNode === 'colombo' ? 'bg-accent/5' : ''}`}>
@@ -280,15 +279,15 @@ await onfixDb.transact({
               </div>
 
               <div className="p-6 flex flex-col items-center gap-4 bg-[#151515] max-[767px]:w-full [&>button]:max-[767px]:w-full">
-                <Button 
-                  onClick={executePingTest} 
-                  disabled={pingStatus === 'testing'} 
-                  variant="accent" 
+                <Button
+                  onClick={executePingTest}
+                  disabled={pingStatus === 'testing'}
+                  variant="accent"
                   icon={<Play size={14} />}
                 >
                   {pingStatus === 'testing' ? 'Executing Latency Pings...' : 'Run Edge Latency Test'}
                 </Button>
-                
+
                 {pingStatus === 'completed' && (
                   <div className="flex items-center gap-2 bg-[#10b981]/10 border border-[#10b981]/20 px-4.5 py-2.5 rounded-pill text-[0.85rem] text-[#34d399]">
                     <CheckCircle2 size={16} className="text-[#10b981]" />
@@ -307,7 +306,7 @@ await onfixDb.transact({
           <div className="text-center mb-12">
             <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">AUDIT SCOPE</span>
             <h2 className="text-[2.5rem] font-heading font-bold mb-4 text-text-dark">Verified Corporate Protections</h2>
-            <p className="max-w-[700px] mx-auto text-[#666] text-lg leading-[1.6]">
+            <p className="max-w-[700px] mx-auto text-text-muted-dark text-lg leading-[1.6]">
               We design our applications to maintain continuous compliance certificates with global information security protocols.
             </p>
           </div>
