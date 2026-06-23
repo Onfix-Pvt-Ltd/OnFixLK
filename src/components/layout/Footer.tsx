@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, ArrowRight, Shield } from 'lucide-react';
 import logoImg from '../../assets/logos/onfix-oval-logo.png';
 
@@ -18,10 +19,10 @@ export const Footer: React.FC = () => {
     <footer className="bg-bg-dark text-text-light border-t border-border-dark pt-20 pb-0 relative">
       <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_2fr] gap-12">
         <div className="flex flex-col gap-5 col-span-1 sm:col-span-2 lg:col-span-1">
-          <a href="#hero" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img src={logoImg} alt="Onfix Logo" className="h-9 w-auto rounded-small" />
             <span className="font-heading font-extrabold text-[1.25rem] tracking-[2px] text-text-light">ONFIX</span>
-          </a>
+          </Link>
           <p className="text-[0.9rem] text-text-muted-light leading-[1.6]">
             Next-generation enterprise resource systems and databases. Building high-performance solutions for high-performance organizations.
           </p>
@@ -39,22 +40,22 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-6 col-span-1">
-          <h4 className="text-text-light text-[0.95rem] font-bold tracking-[1px] uppercase">Ecosystem</h4>
+          <h4 className="text-text-light text-[0.95rem] font-bold tracking-[1px] uppercase">Services</h4>
           <ul className="list-none flex flex-col gap-3.5">
-            <li><a href="https://onfixpos.com" target="_blank" rel="noopener noreferrer" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">ONFIX POS</a></li>
-            <li><a href="#products" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Custom ERP</a></li>
-            <li><a href="#products" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Database Engines</a></li>
-            <li><a href="#philosophy" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Telemetry Core</a></li>
+            <li><Link to="/services" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Websites & Apps</Link></li>
+            <li><Link to="/services" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Custom Software</Link></li>
+            <li><Link to="/services" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">AI & Automation</Link></li>
+            <li><Link to="/services" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">System Integrations</Link></li>
           </ul>
         </div>
 
         <div className="flex flex-col gap-6 col-span-1">
           <h4 className="text-text-light text-[0.95rem] font-bold tracking-[1px] uppercase">Company</h4>
           <ul className="list-none flex flex-col gap-3.5">
-            <li><a href="#philosophy" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Philosophy</a></li>
-            <li><a href="#contact" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Architecture Reviews</a></li>
-            <li><a href="#" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Security Labs</a></li>
-            <li><a href="#" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Contact Support</a></li>
+            <li><Link to="/about" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">About Us</Link></li>
+            <li><Link to="/products" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Products</Link></li>
+            <li><Link to="/news" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">News & Updates</Link></li>
+            <li><Link to="/careers" className="text-text-muted-light text-[0.9rem] font-medium transition-all duration-150 ease-out hover:text-accent hover:pl-1">Careers</Link></li>
           </ul>
         </div>
 
