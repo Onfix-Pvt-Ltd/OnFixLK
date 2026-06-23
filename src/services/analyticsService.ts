@@ -14,15 +14,21 @@ export const analyticsService = {
    * Fetches current live telemetry stats.
    */
   async getLiveTelemetry(): Promise<LiveTelemetryMetrics> {
-    // Simulate API retrieval delay
-    await new Promise((resolve) => setTimeout(resolve, 300));
-    
-    // Base static values that get minor randomized offsets in frontend polling
-    return {
-      activeTerminals: 14820,
-      monthlyTransactions: 42918504,
-      serverUptime: 99.9997,
-      apiLatencyMs: 14,
-    };
+    try {
+      const response = await fetch('http://localhost:8080/api/telemetry');
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('[API Error] getLiveTelemetry:', error);
+      // Resilient fallback to mock values so frontend dashboard continues to load
+      return {
+        activeTerminals: 14820,
+        monthlyTransactions: 42918505,
+        serverUptime: 99.9997,
+        apiLatencyMs: 14,
+      };
+    }
   }
 };

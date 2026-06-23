@@ -22,30 +22,34 @@ export const contactService = {
    * Submits contact inquiry to backend server.
    */
   async submitInquiry(data: ContactRequestData): Promise<ApiResponse<null>> {
-    // Simulate API Network Request Latency (1.5 seconds)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    // Client-side validation fallback
-    if (!data.name || !data.email || !data.message) {
-      return {
-        success: false,
-        message: 'Required fields are missing. Please verify your input.',
-      };
-    }
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-      return {
-        success: false,
-        message: 'Invalid email address format.',
-      };
-    }
+    try {
+      const response = await fetch('http://localhost:8080/api/contact/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    // Success response mock
-    console.log('[API POST /api/contact/submit] Payload:', data);
-    return {
-      success: true,
-      message: 'Thank you. Our engineering team has received your architecture review request. We will follow up within 24 hours.',
-    };
+      const resJson = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        return {
+          success: false,
+          message: resJson.message || `Server error: ${response.status}`,
+        };
+      }
+
+      return {
+        success: true,
+        message: resJson.message || 'Thank you. Our engineering team has received your architecture review request. We will follow up within 24 hours.',
+      };
+    } catch (error) {
+      console.error('[API Error] submitInquiry:', error);
+      return {
+        success: false,
+        message: 'An unexpected network error occurred. Please ensure the backend server is running.',
+      };
+    }
   }
 };
