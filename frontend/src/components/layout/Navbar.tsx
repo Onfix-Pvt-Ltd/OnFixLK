@@ -3,8 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { 
   Menu, X, ArrowRight, ChevronDown, 
   ShoppingBag, Cpu, Database, Share2, 
-  Server, Shield, Activity, FileText, 
-  Zap, HelpCircle, PhoneCall, Code,
+  Zap, Code,
   Sun, Moon, Globe, Sparkles
 } from 'lucide-react';
 import { Button } from '../common/Button';

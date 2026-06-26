@@ -5,8 +5,8 @@ import { Button } from '../components/common/Button';
 import { ScrollReveal } from '../components/common/ScrollReveal';
 import {
   ArrowRight, ExternalLink, ShoppingBag, Camera,
-  Building2, Dumbbell, UtensilsCrossed, Sparkles,
-  Share2, Code, CheckCircle2, ChevronRight
+  Building2, Dumbbell, UtensilsCrossed,
+  Share2, Code
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
