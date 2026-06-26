@@ -23,7 +23,8 @@ export const contactService = {
    */
   async submitInquiry(data: ContactRequestData): Promise<ApiResponse<null>> {
     try {
-      const response = await fetch('http://localhost:8080/api/contact/submit', {
+      const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8080';
+      const response = await fetch(`${API_URL}/api/contact/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

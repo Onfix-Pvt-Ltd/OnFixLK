@@ -15,7 +15,8 @@ export const analyticsService = {
    */
   async getLiveTelemetry(): Promise<LiveTelemetryMetrics> {
     try {
-      const response = await fetch('http://localhost:8080/api/telemetry');
+      const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8080';
+      const response = await fetch(`${API_URL}/api/telemetry`);
       if (!response.ok) {
         throw new Error(`Server error: ${response.status}`);
       }
