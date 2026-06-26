@@ -4,8 +4,8 @@ import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
 import { ScrollReveal } from '../components/common/ScrollReveal';
 import { 
-  ArrowRight, Globe, Code, Sparkles, Share2, 
-  CheckCircle2, Laptop, Database, Cpu, Lock
+  ArrowRight, Globe, Code, Sparkles, Share2,
+  CheckCircle2, Cpu
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

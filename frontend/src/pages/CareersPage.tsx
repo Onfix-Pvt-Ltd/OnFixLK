@@ -3,7 +3,7 @@ import { SEOHelper } from '../components/common/SEOHelper';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
 import { ScrollReveal } from '../components/common/ScrollReveal';
-import { ArrowRight, Code, Heart, Sparkles, Terminal, FileText, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const CareersPage: React.FC = () => {
   const perks = [
