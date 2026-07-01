@@ -76,14 +76,14 @@ export const Hero: React.FC = () => {
             </Link>
           </div>
 
-          <div className="hero-reveal w-full border-t border-border-light pt-6 max-[900px]:flex max-[900px]:flex-col max-[900px]:items-center" style={{ transitionDelay: '0.56s' }}>
+          {/* <div className="hero-reveal w-full border-t border-border-light pt-6 max-[900px]:flex max-[900px]:flex-col max-[900px]:items-center" style={{ transitionDelay: '0.56s' }}>
             <p className="text-[0.67rem] font-bold uppercase text-text-muted-dark opacity-60 tracking-[2px] mb-4">Trusted by teams in hospitality, retail &amp; enterprise</p>
             <div className="flex flex-wrap gap-[30px] items-center max-[900px]:justify-center">
               {['HILTON', 'MARRIOTT', 'THE RITZ', 'NOBU'].map(b => (
                 <span key={b} className="font-heading font-bold text-[0.82rem] tracking-[2px] text-text-muted-dark opacity-40 transition-all duration-300 ease-out cursor-default select-none hover:text-accent hover:opacity-100">{b}</span>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* ── RIGHT COLUMN — Product mockup ────────────────── */}
