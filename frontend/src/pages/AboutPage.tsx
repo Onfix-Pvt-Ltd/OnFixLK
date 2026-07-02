@@ -6,7 +6,7 @@ import { ScrollReveal } from '../components/common/ScrollReveal';
 import { 
   Smartphone, Cpu, Monitor, Network,
   Zap, TrendingUp, Layers, ArrowRight,
-  Code, Server, Database, Globe
+  Code, Server, Database
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
