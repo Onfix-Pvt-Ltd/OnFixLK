@@ -137,9 +137,9 @@ export const Navbar: React.FC = () => {
 
                       <div className="flex flex-col">
                         <div className="bg-gradient-to-br from-bg-dark to-[#252525] p-6 rounded-large text-white h-full flex flex-col shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
-                          <span className="self-start bg-accent text-white text-[0.65rem] font-extrabold px-2 py-1 rounded-pill tracking-[0.5px] mb-4">SLA COMMITMENT</span>
-                          <h4 className="text-[1.05rem] font-[750] mb-2">99.999% Uptime SLA</h4>
-                          <p className="text-[0.78rem] text-[#bbb] leading-[1.4] mb-5 grow">Our architectures run on global Anycast edge array systems securing zero write-locks and latency spikes.</p>
+                          <span className="self-start bg-accent text-white text-[0.65rem] font-extrabold px-2 py-1 rounded-pill tracking-[0.5px] mb-4">OUR PROMISE</span>
+                          <h4 className="text-[1.05rem] font-[750] mb-2">Reliable Performance</h4>
+                          <p className="text-[0.78rem] text-[#bbb] leading-[1.4] mb-5 grow">We deploy systems using redundant, secure cloud infrastructure to ensure high availability and fast loading speeds.</p>
                           <Link to="/services" className="inline-flex items-center gap-1.5 text-[0.8rem] font-[750] text-accent transition-all duration-150 ease-out hover:gap-2.5 hover:text-[#ff8d4d] group">
                             <span>Explore Our Process</span> <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
                           </Link>
@@ -219,8 +219,8 @@ export const Navbar: React.FC = () => {
                       <div className="flex flex-col">
                         <div className="bg-gradient-to-br from-bg-dark to-[#252525] p-6 rounded-large text-white h-full flex flex-col shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
                           <span className="self-start bg-accent text-white text-[0.65rem] font-extrabold px-2 py-1 rounded-pill tracking-[0.5px] mb-4">NEW RELEASE</span>
-                          <h4 className="text-[1.05rem] font-[750] mb-2">Onfix DB Core v4.2</h4>
-                          <p className="text-[0.78rem] text-[#bbb] leading-[1.4] mb-5 grow">Lock-free serializing transaction engine achieves 0.8ms average latency in high-density builds.</p>
+                          <h4 className="text-[1.05rem] font-[750] mb-2">Framework Boilerplate v1.2</h4>
+                          <p className="text-[0.78rem] text-[#bbb] leading-[1.4] mb-5 grow">Our custom boilerplate frameworks for startup apps ensure quick development cycles and low-latency API routes.</p>
                           <Link to="/news" className="inline-flex items-center gap-1.5 text-[0.8rem] font-[750] text-accent transition-all duration-150 ease-out hover:gap-2.5 hover:text-[#ff8d4d] group">
                             <span>Read Release Notes</span> <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
                           </Link>

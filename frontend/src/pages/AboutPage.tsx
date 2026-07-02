@@ -4,9 +4,8 @@ import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
 import { ScrollReveal } from '../components/common/ScrollReveal';
 import { 
-  ArrowRight,
   Smartphone, Cpu, Monitor, Network,
-  Zap, TrendingUp, Layers
+  Zap, TrendingUp, Layers, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -25,7 +24,7 @@ export const AboutPage: React.FC = () => {
     {
       icon: <Monitor size={24} className="text-accent" />,
       title: 'Web Platforms',
-      desc: 'Blazing-fast responsive interfaces built on lightweight frameworks ensuring sub-millisecond edge load times.'
+      desc: 'Blazing-fast responsive interfaces built on lightweight frameworks ensuring rapid load times.'
     },
     {
       icon: <Network size={24} className="text-accent" />,
@@ -38,17 +37,17 @@ export const AboutPage: React.FC = () => {
     {
       icon: <Zap size={24} className="text-accent" />,
       title: 'Speed & Efficiency',
-      desc: 'We prioritize performance above all. Our databases eliminate write-locks, and our clients experience zero buffer times.'
+      desc: 'We prioritize performance above all. Our applications are optimized for fast response times and zero buffer delays.'
     },
     {
       icon: <TrendingUp size={24} className="text-accent" />,
       title: 'Scalability',
-      desc: 'We architect software to expand effortlessly. Our modular codebases support massive spikes in concurrent traffic without breaking.'
+      desc: 'We architect software to expand effortlessly. Our modular codebases support spikes in concurrent traffic without breaking.'
     },
     {
       icon: <Layers size={24} className="text-accent" />,
       title: 'Clean Engineering',
-      desc: 'We write clear, self-documenting code and build sovereign database layers, completely bypassing heavy legacy wrappers.'
+      desc: 'We write clear, self-documenting code, design optimized database layers, and follow industry standard practices.'
     }
   ];
 
@@ -56,7 +55,7 @@ export const AboutPage: React.FC = () => {
     <div className="animate-fade">
       <SEOHelper 
         title="About Us — Software Engineering & Systems Integration" 
-        description="Learn how Onfix accelerates business growth through integrated systems, custom apps, automated workflows, and sovereign engineering."
+        description="Learn how Onfix accelerates business growth through integrated systems, custom apps, automated workflows, and robust engineering."
       />
 
       {/* Hero Section */}
@@ -67,7 +66,7 @@ export const AboutPage: React.FC = () => {
             We Accelerate Business Growth Through Modern Software & Automation
           </h1>
           <p className="max-w-[700px] mx-auto text-[1.15rem] text-text-muted-light leading-[1.7]">
-            Onfix is a systems engineering group. We help modern enterprises eliminate manual overhead, unify data streams, and build trust through fast, robust software.
+            Onfix is a software development team. We help businesses eliminate manual overhead, unify data streams, and build trust through fast, robust applications.
           </p>
         </div>
       </section>
@@ -86,7 +85,7 @@ export const AboutPage: React.FC = () => {
                 Most modern businesses are slowed down by the very systems designed to help them. Data gets trapped in isolated tools — CRM, inventory POS, billing ledgers, and shipping trackers — creating bottlenecks, manual double-entry, and processing delays.
               </p>
               <p className="text-[1.05rem] leading-[1.7] text-text-muted-dark mb-6">
-                Onfix was founded to bridge this gap. We bypass clunky wrappers and integrate systems directly on top of lock-free edge databases. The result is a single source of truth, enabling operations to run instantly, securely, and seamlessly.
+                Onfix was founded to bridge this gap. We integrate custom software with modern database structures and payment flows. The result is a single source of truth, enabling operations to run instantly, securely, and seamlessly.
               </p>
               <div className="flex gap-4 items-center">
                 <Link to="/services">
@@ -120,7 +119,7 @@ export const AboutPage: React.FC = () => {
                     <div>
                       <h4 className="font-bold text-[0.95rem] text-text-dark">Onfix Integrated Core</h4>
                       <p className="text-[0.82rem] text-text-muted-dark mt-1 leading-[1.4]">
-                        Sub-millisecond transactions, zero database row locking, automated recipe depletion, and automatic ledger updates.
+                        Rapid transaction handling, optimized database queries, automated inventory tracking, and automatic integration updates.
                       </p>
                     </div>
                   </div>
@@ -199,7 +198,7 @@ export const AboutPage: React.FC = () => {
             <div className="max-w-[750px] mx-auto">
               <h2 className="text-[2.5rem] max-[991px]:text-[2rem] font-[850] mb-5 tracking-[-1px]">Accelerate your operations today</h2>
               <p className="text-[1.12rem] text-white/80 leading-[1.7] mb-10">
-                Let's discuss how we can integrate your tools and automate workflows. We provide direct access to our core systems engineering group for consultations.
+                Let's discuss how we can integrate your tools and automate workflows. We provide consultations directly with our development team.
               </p>
               <div className="flex justify-center items-center gap-4 max-[767px]:flex-col max-[767px]:w-full [&>a]:max-[767px]:w-full">
                 <Link to="/contact">

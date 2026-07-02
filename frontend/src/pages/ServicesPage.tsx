@@ -16,10 +16,10 @@ export const ServicesPage: React.FC = () => {
       icon: <Globe className="text-accent" size={36} />,
       title: 'Websites & Apps',
       tagline: 'High-performance user interfaces',
-      description: 'Fast, modern websites and native mobile applications that look spectacular, operate with zero latency, and are engineered to convert visitors into loyal customers.',
+      description: 'Fast, modern websites and mobile applications that look spectacular, operate with high performance, and are engineered to convert visitors into loyal customers.',
       details: [
         'React, Next.js, and TypeScript single-page architectures.',
-        'iOS & Android native apps built via lightweight runtimes.',
+        'Responsive mobile designs and native app integrations.',
         'Fluid UX transitions and customized micro-interactions.',
         'Fully responsive layouts optimized for core web vitals.'
       ],
@@ -30,10 +30,10 @@ export const ServicesPage: React.FC = () => {
       icon: <Code className="text-accent" size={36} />,
       title: 'Custom Software',
       tagline: 'Tools engineered around your operations',
-      description: 'Internal systems, POS networks, inventory ledgers, and bespoke tools designed from the ground up to match the exact mechanics of your business.',
+      description: 'Internal systems, POS solutions, inventory ledgers, and bespoke tools designed from the ground up to match the exact mechanics of your business.',
       details: [
         'Hospitality POS systems with tableside ordering queues.',
-        'FIFO inventory depletion ledgers and auto-procurement.',
+        'FIFO inventory depletion ledgers and automated stock tracking.',
         'Internal employee portals and live performance trackers.',
         'High-density dashboard interfaces with custom analytics.'
       ],
@@ -63,7 +63,7 @@ export const ServicesPage: React.FC = () => {
         'Stripe, PayHere, and global gateway payment rails.',
         'Accounting synchronization with QuickBooks and Xero ledgers.',
         'Global delivery routing integrations (Uber, local logistics).',
-        'Secure OAuth 2.0 API gateway access points for partners.'
+        'Secure API integration workflows for business partners.'
       ],
       techBadge: 'REST / GraphQL / Secure Webhooks'
     }
@@ -83,12 +83,12 @@ export const ServicesPage: React.FC = () => {
     {
       num: '03',
       title: 'Custom Engineering',
-      desc: 'Our developers build your software using lock-free databases and high-performance frameworks.'
+      desc: 'Our developers build your software using modern architectures, optimized queries, and high-performance frameworks.'
     },
     {
       num: '04',
       title: 'Continuous Support',
-      desc: 'We provide SLA-backed maintenance, server monitoring, and regular feature updates.'
+      desc: 'We provide maintenance support, server monitoring, and regular feature updates.'
     }
   ];
 
@@ -141,13 +141,13 @@ export const ServicesPage: React.FC = () => {
                       <div className="bg-[#111] p-5 rounded-medium font-mono text-[0.8rem] text-[#00ff66] border border-[#222]">
                         <div className="flex justify-between items-center opacity-50 border-b border-[#222] pb-2.5 mb-2.5 text-white">
                           <span>api_gateway_telemetry.log</span>
-                          <span className="flex items-center gap-1"><Cpu size={12} /> Edge Online</span>
+                          <span className="flex items-center gap-1"><Cpu size={12} /> Live telemetry</span>
                         </div>
                         <div className="space-y-1">
                           <div>&gt; onfix init --module {svc.id}</div>
                           <div className="text-white">&gt; [OK] Module successfully compiled.</div>
-                          <div>&gt; latency check: 12ms (via sg-node-02)</div>
-                          <div>&gt; buffer utilization: 0.02%</div>
+                          <div>&gt; latency check: 12ms (estimated)</div>
+                          <div>&gt; query optimization: active</div>
                         </div>
                       </div>
                     </div>
@@ -194,7 +194,7 @@ export const ServicesPage: React.FC = () => {
               <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">OUR PROCESS</span>
               <h2 className="text-[2.5rem] font-heading font-bold mb-4 text-text-dark">How We Engineer Software</h2>
               <p className="max-w-[650px] mx-auto text-text-muted-dark text-lg leading-[1.6]">
-                From initial systems audit to ongoing maintenance, our process ensures zero delays, clear architecture, and maximum uptime.
+                From initial systems audit to ongoing maintenance, our process ensures clear architecture and reliable performance.
               </p>
             </div>
           </ScrollReveal>
@@ -221,7 +221,7 @@ export const ServicesPage: React.FC = () => {
             <div className="max-w-[750px] mx-auto">
               <h2 className="text-[2.5rem] max-[767px]:text-[2rem] font-[850] mb-5 tracking-[-0.8px]">Ready to build something fast?</h2>
               <p className="text-[1.12rem] text-white/80 leading-[1.6] mb-8">
-                Consult with our engineering group today. We will audit your current workflow stack and outline a high-performance roadmap with a clear, honest quote.
+                Consult with our team today. We will analyze your current workflow stack and outline a high-performance roadmap with a clear, honest quote.
               </p>
               <Link to="/contact">
                 <Button variant="primary" className="!bg-white !text-accent !border-2 !border-white !font-extrabold hover:!bg-[#fff5f0] hover:!text-[#e04e00] hover:!border-[#fff5f0] hover:-translate-y-0.5 active:translate-y-0" icon={<ArrowRight size={18} />}>

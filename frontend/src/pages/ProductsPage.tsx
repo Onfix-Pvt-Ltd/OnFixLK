@@ -37,9 +37,9 @@ export const ProductsPage: React.FC = () => {
       title: 'ONFIX POS Core',
       category: 'Hospitality & Dining',
       hook: 'All-in-one ERP & POS infrastructure for serious hospitality businesses.',
-      desc: 'Engineered from the ground up to eliminate transaction latency and data fragmentation. Seamlessly synchronizes menus, inventory depletion, payroll, and property systems across 1,000+ branches in real-time.',
+      desc: 'Engineered from the ground up to eliminate transaction latency and data fragmentation. Seamlessly synchronizes menus, inventory depletion, payroll, and property systems across multiple branches in real-time.',
       features: [
-        'End-to-end encryption with PCI-DSS Level 1 enforcement.',
+        'End-to-end encryption and secure payment handling integrations.',
         'Zero-friction QR tableside digital ordering queues.',
         'Built-in multi-branch ROI calculator and FIFO recipe depletion.'
       ],
@@ -267,7 +267,7 @@ export const ProductsPage: React.FC = () => {
             <div className="max-w-[750px] mx-auto">
               <h2 className="text-[2.5rem] max-[991px]:text-[2rem] font-[850] mb-5 tracking-[-1px]">Have a unique vision? Let's engineer it.</h2>
               <p className="text-[1.12rem] text-white/80 leading-[1.7] mb-10">
-                Get in touch with our systems engineering team today to review your current tool stack and design your high-performance custom platform.
+                Get in touch with our team today to review your current tool stack and design your high-performance custom platform.
               </p>
               <div className="flex justify-center items-center gap-4 max-[767px]:flex-col max-[767px]:w-full [&>a]:max-[767px]:w-full">
                 <Link to="/contact">

@@ -13,15 +13,15 @@ export const CareersPage: React.FC = () => {
     },
     {
       title: 'High-Impact Problems',
-      desc: 'No corporate CRUD apps. You will build high-frequency database engines, tableside POS systems, and AI automation parsers.'
+      desc: 'Build high-performance web applications, robust POS systems, and smart workflow automation tools.'
     },
     {
-      title: 'Cutting-Edge Stack',
-      desc: 'Build using React, Go, Node.js, Python, and cloud edge architectures. We write lock-free engines and clean code systems.'
+      title: 'Modern Tech Stack',
+      desc: 'Build using React, Node.js, Go, Python, and modern edge deployment frameworks. We prioritize clean code and robust design.'
     },
     {
       title: 'Competitive Compensation',
-      desc: 'We offer premium rates, flexible remote options, and equity pathways for early core systems developers.'
+      desc: 'We offer competitive rates, flexible remote options, and growth opportunities for early developers.'
     }
   ];
 
@@ -34,17 +34,17 @@ export const CareersPage: React.FC = () => {
       stack: 'React, Next.js, Node.js, Python, TailwindCSS'
     },
     {
-      title: 'Backend / Integration Specialist',
-      dept: 'Systems Engineering',
-      location: 'On-site (Colombo Edge Node Hub)',
-      summary: 'Architect low-latency transaction nodes, write BGP anycast edge pathways, and construct secure OAuth integration gateways in Go or Java.',
-      stack: 'Go, Java, Cloud Architecture, PostgreSQL, Docker'
+      title: 'Backend & Integration Developer',
+      dept: 'Engineering',
+      location: 'On-site (Colombo, Sri Lanka)',
+      summary: 'Architect backend services, integrate payment processors and APIs, and construct secure database integrations in Go or Python.',
+      stack: 'Go, Node.js, Cloud Architecture, PostgreSQL, Docker'
     },
     {
       title: 'UI/UX Product Designer',
       dept: 'Product Design',
       location: 'Remote / Hybrid',
-      summary: 'Design sleek glassmorphism dashboard interfaces, tableside POS flows, and mobile wireframes with high-fidelity interactions.',
+      summary: 'Design sleek dashboard interfaces, custom booking flows, and mobile wireframes with high-fidelity interactions.',
       stack: 'Figma, Tailwind Styling Guidelines, Prototyping, Design Systems'
     }
   ];
@@ -52,8 +52,8 @@ export const CareersPage: React.FC = () => {
   return (
     <div className="animate-fade">
       <SEOHelper 
-        title="Careers — Join the Systems Engineering Group" 
-        description="Build the future of business automation at Onfix. Explore open developer, systems specialist, and UI/UX product designer positions."
+        title="Careers — Join the Onfix Team" 
+        description="Build the future of business automation at Onfix. Explore open developer and UI/UX product designer positions."
       />
 
       {/* Hero Section */}
@@ -61,10 +61,10 @@ export const CareersPage: React.FC = () => {
         <div className="container text-center">
           <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">ONFIX CAREERS</span>
           <h1 className="text-[3.2rem] max-[767px]:text-[2.2rem] font-[850] mt-2.5 mb-6 bg-gradient-to-r from-white to-primary bg-clip-text text-transparent leading-[1.1] tracking-[-1.5px] max-w-[850px] mx-auto">
-            Build the Future of Business Automation & High-Performance Software
+            Build the Future of Business Automation & Web Software
           </h1>
           <p className="max-w-[700px] mx-auto text-[1.15rem] text-text-muted-light leading-[1.7]">
-            We build sovereign database engines and automation platforms that power high-density operational networks. Join our core engineering team.
+            We build high-performance web applications and database integrations. Join our growing team of developers.
           </p>
         </div>
       </section>
@@ -108,7 +108,7 @@ export const CareersPage: React.FC = () => {
               <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">ACTIVE OPPORTUNITIES</span>
               <h2 className="text-[2.5rem] font-heading font-bold mb-4 text-text-dark">Open Positions</h2>
               <p className="max-w-[650px] mx-auto text-text-muted-dark text-lg leading-[1.6]">
-                Find your role in our engineering, architecture, and design sprints.
+                Find your role in our engineering and design sprints.
               </p>
             </div>
           </ScrollReveal>

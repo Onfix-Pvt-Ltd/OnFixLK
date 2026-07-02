@@ -210,7 +210,7 @@ export const DashboardMockup: React.FC<{ isRevealed?: boolean }> = ({ isRevealed
               </div>
               <div className="bg-white border border-[#ebedf1] rounded-xl p-[11px_12px] flex flex-col gap-0.75">
                 <span className="text-[0.6rem] font-semibold uppercase tracking-[0.5px] text-[#98a0ac]">API Requests</span>
-                <span className="font-heading text-[1.06rem] font-extrabold text-[#111317]">1.2M</span>
+                <span className="font-heading text-[1.06rem] font-extrabold text-[#111317]">142k</span>
                 <span className="text-[0.58rem] font-bold text-[#059669]">▲ 14% this month</span>
               </div>
             </div>

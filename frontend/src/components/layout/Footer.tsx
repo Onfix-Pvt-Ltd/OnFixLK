@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} Onfix Pvt Ltd. All rights reserved.
           </div>
           <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
-            <span className="flex items-center gap-1.5 text-text-light font-medium"><Shield size={14} /> SOC2 Type II Certified</span>
+            <span className="flex items-center gap-1.5 text-text-light font-medium"><Shield size={14} /> Secure by Design</span>
             <span className="text-[#333333]">|</span>
             <a href="#" className="text-text-muted-light transition-all duration-150 ease-out hover:text-text-light">Privacy Policy</a>
             <span className="text-[#333333]">|</span>

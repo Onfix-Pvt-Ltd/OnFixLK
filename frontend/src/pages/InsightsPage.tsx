@@ -7,28 +7,28 @@ import { Calendar, ArrowRight, FileText, Cpu, Star } from 'lucide-react';
 export const InsightsPage: React.FC = () => {
   const articles = [
     {
-      id: 'nobu-pos',
+      id: 'multibranch-pos',
       tag: 'CASE STUDY',
-      title: 'Nobu Hospitality Case Study: Zero Latency Tableside Checkout',
-      desc: 'How Nobu Hotels integrated ONFIX POS across 12 APAC branches to resolve tableside guest card processing bottlenecks and room sync errors.',
+      title: 'Multi-Branch POS Integration: Modernizing Operations',
+      desc: 'How we helped a hospitality provider integrate a central management platform to resolve tableside guest card processing bottlenecks and sync multi-branch menus.',
       date: 'June 02, 2026',
       readTime: '6 min read',
       featured: false,
     },
     {
-      id: 'colombo-node',
-      tag: 'EDGE NETWORK',
-      title: 'Colombo Rack Edge Node Array Expansion Completed',
-      desc: 'We have finished hardware installation of lk-colombo-edge-01 to handle seasonal traffic spikes in Southeast Asian luxury resorts.',
+      id: 'edge-networks',
+      tag: 'EDGE DEPLOYMENT',
+      title: 'Deploying Web Platforms Globally on Modern Edge Networks',
+      desc: 'A breakdown of our serverless deployment architecture that caches static content and routes API calls to the closest edge servers.',
       date: 'May 28, 2026',
       readTime: '4 min read',
       featured: false,
     },
     {
-      id: 'soc2-audit',
+      id: 'security-labs',
       tag: 'SECURITY LABS',
-      title: 'Annual SOC 2 Type II Security Compliance Audit Completed',
-      desc: 'Onfix successfully cleared the continuous third-party information auditing scope with zero compliance exceptions noted.',
+      title: 'Building Secure Applications: Core Practices for Modern Startups',
+      desc: 'An overview of the security protocols we implement by default, from secure JWT-based authentication to Stripe integration standards.',
       date: 'May 14, 2026',
       readTime: '3 min read',
       featured: false,
@@ -36,16 +36,16 @@ export const InsightsPage: React.FC = () => {
   ];
 
   const bulletins = [
-    { version: 'v4.2.1-patch', date: 'June 08, 2026', note: 'Resolved TCP handshaking retry intervals on failover routes.' },
-    { version: 'v4.2.0-release', date: 'May 20, 2026', note: 'Public launch of Onfix DB Core lock-free serializing transaction engine.' },
-    { version: 'v4.1.8-patch', date: 'May 02, 2026', note: 'Implemented strict Webhook rate-limiting policies at API gateway.' },
+    { version: 'v1.2.1-patch', date: 'June 08, 2026', note: 'Optimized response parsing in checkout webhook integrations.' },
+    { version: 'v1.2.0-release', date: 'May 20, 2026', note: 'Public launch of Onfix custom boilerplate frameworks for startup apps.' },
+    { version: 'v1.1.8-patch', date: 'May 02, 2026', note: 'Implemented rate-limiting and security policies at the edge router.' },
   ];
 
   return (
     <div className="animate-fade">
       <SEOHelper 
         title="Insights, Bulletins & Case Studies" 
-        description="Read Onfix's technical insights, engineering bulletins, SOC 2 reports, and case studies detailing our global edge deployments."
+        description="Read Onfix's technical insights, engineering bulletins, security standards, and case studies detailing our custom web applications."
       />
 
       {/* Hero Header */}
@@ -54,7 +54,7 @@ export const InsightsPage: React.FC = () => {
           <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">ONFIX INSIGHTS</span>
           <h1 className="text-[3rem] max-[767px]:text-[2.2rem] font-[850] mt-2.5 mb-5 bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">Technical Bulletins & Reports</h1>
           <p className="max-w-[700px] mx-auto text-[1.15rem] text-text-muted-light leading-[1.7]">
-            Stay up to date with engineering updates, database benchmarks, and case studies from our global client deployments.
+            Stay up to date with engineering updates, performance optimization tips, and case studies from our client deployments.
           </p>
         </div>
       </section>
@@ -76,15 +76,15 @@ export const InsightsPage: React.FC = () => {
                 </div>
                 <div className="relative z-2 text-white">
                   <span className="flex items-center gap-1.5 text-[0.75rem] opacity-80 mb-2"><Calendar size={12} /> May 20, 2026</span>
-                  <h3 className="text-[1.6rem] max-[767px]:text-[1.3rem] font-extrabold leading-tight">Onfix DB Core v4.2 Release: Achieving Sub-Millisecond Concurrency</h3>
+                  <h3 className="text-[1.6rem] max-[767px]:text-[1.3rem] font-extrabold leading-tight">Building Scalable Architectures: Achieving Low-Latency APIs</h3>
                 </div>
               </div>
               <div className="p-[30px] bg-bg-card">
                 <p className="text-text-muted-dark text-[0.95rem] leading-[1.6] mb-6">
-                  Our database systems engineering group has finished deploying the lockless FIFO database logging format across all global Anycast edge nodes. In live operational tests across 10,000 concurrent writes/sec, this architecture reduced write processing latencies to an average of 0.8ms, resolving legacy locking bottlenecks completely.
+                  Our development team has optimized the API response pipeline and data caching layers for our web applications. In live stress tests, this configuration handled high concurrency levels while maintaining an average response time of under 50ms, ensuring pages load quickly and reliably for end-users.
                 </p>
                 <div className="flex justify-between items-center border-t border-border-light pt-5">
-                  <span className="text-[0.8rem] text-text-muted-dark font-medium">8 min read</span>
+                  <span className="text-[0.8rem] text-text-muted-dark font-medium">5 min read</span>
                   <Button variant="secondary" icon={<ArrowRight size={14} />}>
                     Read Technical Report
                   </Button>
@@ -116,7 +116,7 @@ export const InsightsPage: React.FC = () => {
                 <h3 className="text-[1.15rem] font-bold">Engine Patch Logs</h3>
               </div>
               <p className="text-[0.85rem] text-[#aaa] leading-[1.5] mb-6">
-                Technical release logs and network routing adjustments pushed to global Anycast endpoints.
+                Technical logs and updates pushed to client repositories and cloud hosting platforms.
               </p>
 
               <div className="flex flex-col gap-5">
@@ -140,10 +140,10 @@ export const InsightsPage: React.FC = () => {
 
             <Card variant="light" hoverEffect={false} className="border border-border-light shadow-subtle flex flex-col items-start">
               <FileText className="text-accent" size={32} />
-              <h3 className="text-[1.15rem] font-[750] mt-4 mb-2 text-text-dark">FIFO Lock-Free DB Whitepaper</h3>
-              <p className="text-[0.85rem] text-text-muted-dark leading-[1.5]">Download our complete technical specifications document on sub-millisecond ACID processing.</p>
+              <h3 className="text-[1.15rem] font-[750] mt-4 mb-2 text-text-dark">Performance Optimization Guide</h3>
+              <p className="text-[0.85rem] text-text-muted-dark leading-[1.5]">Download our guide on optimizing database queries and frontend load times.</p>
               <Button href="#contact" variant="primary" className="w-full mt-4">
-                Request Whitepaper
+                Request Guide
               </Button>
             </Card>
           </div>

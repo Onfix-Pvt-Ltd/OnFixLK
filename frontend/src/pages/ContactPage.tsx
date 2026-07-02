@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
-  // Systems Audit Form State
+  // Systems Consult Form State
   const [formData, setFormData] = useState<ContactRequestData>({
     name: '',
     email: '',
@@ -67,28 +67,28 @@ export const ContactPage: React.FC = () => {
 
   // Estimator Calculations
   const getEstimationResults = () => {
-    let latencySaving = '35ms';
-    let recommendedCluster = 'Onfix POS Edge Array';
-    let databaseEngine = 'DB Core Single-Node FIFO';
-    let auditTimeline = '4 Business Days';
-    let description = 'Optimized for front-of-house tableside order processing and room charges synchronization.';
+    let latencySaving = '15%';
+    let recommendedCluster = 'Onfix POS Edge Template';
+    let databaseEngine = 'PostgreSQL / Mongoose Instance';
+    let auditTimeline = '3 Business Days';
+    let description = 'Optimized for web ordering, database indexing, and user access caching.';
 
     if (estIndustry === 'procurement' || estIndustry === 'enterprise') {
-      latencySaving = '60ms';
-      recommendedCluster = 'Onfix Cloud ERP Cluster';
-      databaseEngine = 'DB Core Multi-Node Cluster';
-      auditTimeline = '7 Business Days';
-      description = 'Configured for high-volume automated recipe depletion and FIFO purchase order routing.';
-    } else if (estIndustry === 'api') {
-      latencySaving = '18ms';
-      recommendedCluster = 'Onfix API Hub Gateway';
-      databaseEngine = 'DB Core High-Frequency Key-Value';
+      latencySaving = '25%';
+      recommendedCluster = 'Onfix Cloud ERP Setup';
+      databaseEngine = 'Relational DB with FIFO Caching';
       auditTimeline = '5 Business Days';
-      description = 'Customized for external webhook relays and OAuth2 credentials handshakes under high load.';
+      description = 'Configured for procurement automation, stock tracking, and inventory sync.';
+    } else if (estIndustry === 'api') {
+      latencySaving = '30%';
+      recommendedCluster = 'Onfix Integration Hub';
+      databaseEngine = 'Redis Cache & API Controller';
+      auditTimeline = '4 Business Days';
+      description = 'Customized for Stripe webhooks, Xero synchronization, and general REST/GraphQL integrations.';
     }
 
     if (estLocations === '21-100' || estLocations === '100+') {
-      auditTimeline = '10 Business Days';
+      auditTimeline = '7 Business Days';
     }
 
     return { latencySaving, recommendedCluster, databaseEngine, auditTimeline, description };
@@ -99,42 +99,42 @@ export const ContactPage: React.FC = () => {
   return (
     <div className="animate-fade">
       <SEOHelper 
-        title="Request Systems Audit & Proposal" 
-        description="Book an engineering audit of your database, POS, or ERP systems. Use our proposal estimator to generate an architecture plan."
+        title="Request Systems Consult & Proposal" 
+        description="Book a technical consultation for your database, POS, or ERP systems. Use our proposal estimator to generate an architecture plan."
       />
 
       {/* Header Banner */}
       <section className="py-20 bg-[radial-gradient(circle_at_10%_90%,rgba(23,23,23,1)_0%,rgba(33,33,33,1)_100%)] border-b border-border-dark text-text-light">
         <div className="container text-center">
-          <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">AUDIT REQUESTS</span>
-          <h1 className="text-[3rem] max-[767px]:text-[2.2rem] font-[850] mt-2.5 mb-5 bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">Systems Audit & Consultations</h1>
+          <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">CONSULTATION REQUESTS</span>
+          <h1 className="text-[3rem] max-[767px]:text-[2.2rem] font-[850] mt-2.5 mb-5 bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">Systems Consultations</h1>
           <p className="max-w-[700px] mx-auto text-[1.15rem] text-text-muted-light leading-[1.7]">
-            Consult with our core systems engineering group to resolve database row-locking, terminal latency, and inventory syncing failures.
+            Consult with our development team to resolve application bottlenecks, payment integrations, and database performance.
           </p>
         </div>
       </section>
 
-      {/* Split Audit Request Form and Estimator */}
+      {/* Split Consult Request Form and Estimator */}
       <section className="py-20 bg-bg-light">
         <div className="container grid grid-cols-2 max-[991px]:grid-cols-1 gap-[50px] max-[991px]:gap-10 items-start">
           
           {/* Left Column: Form Card */}
           <div>
-            <h2 className="text-[1.25rem] font-extrabold mb-6 text-text-dark border-b-2 border-border-light pb-3 uppercase tracking-[0.5px]">Architecture Audit Request</h2>
+            <h2 className="text-[1.25rem] font-extrabold mb-6 text-text-dark border-b-2 border-border-light pb-3 uppercase tracking-[0.5px]">Project Consult Request</h2>
             <Card variant="glass" hoverEffect={false} className="!p-[30px] shadow-medium border border-border-light">
               {status === 'success' ? (
                 <div className="text-center py-10 px-2.5">
                   <div className="w-16 h-16 rounded-full bg-[#10b981]/10 text-[#10b981] text-[2rem] leading-[64px] mx-auto mb-6 font-bold flex items-center justify-center">✓</div>
-                  <h3 className="text-2xl font-extrabold mb-3 text-text-dark">Audit Request Received</h3>
+                  <h3 className="text-2xl font-extrabold mb-3 text-text-dark">Consult Request Received</h3>
                   <p className="text-[0.95rem] text-text-muted-dark leading-[1.6] mb-[30px]">{feedbackMsg}</p>
                   <Button onClick={handleReset} variant="primary" className="!p-[12px_24px]" icon={<RefreshCw size={14} />}>
-                    Submit Another Audit Request
+                    Submit Another Request
                   </Button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <p className="text-[0.9rem] text-text-muted-dark leading-[1.6] mb-6">
-                    Fill out the corporate intake form. A systems engineer will provide an initial recommendation response within 24 hours.
+                    Fill out the form below. A member of our team will review it and get back to you within 24 hours.
                   </p>
                   
                   {status === 'error' && (
@@ -198,21 +198,21 @@ export const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       disabled={status === 'submitting'}
                     >
-                      <option value="pos">ONFIX POS (Hospitality Edge POS)</option>
-                      <option value="custom">Custom Enterprise ERP Architecture</option>
-                      <option value="db">Onfix DB Core Database Engine</option>
+                      <option value="pos">ONFIX POS (Hospitality POS)</option>
+                      <option value="custom">Custom ERP Architecture</option>
+                      <option value="db">Database & API Optimization</option>
                       <option value="general">General Corporate Inquiry</option>
                     </select>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="text-[0.85rem] font-bold text-text-dark uppercase tracking-[0.5px]">Brief System Diagnostic Details *</label>
+                    <label htmlFor="message" className="text-[0.85rem] font-bold text-text-dark uppercase tracking-[0.5px]">Brief Project Details *</label>
                     <textarea
                       id="message"
                       name="message"
                       required
                       rows={4}
-                      placeholder="Please details your locations count, write locks, transaction volume, or latency issues..."
+                      placeholder="Please detail your locations, active projects, or the specific features you want built..."
                       className="w-full p-[14px_16px] text-[0.95rem] text-text-dark bg-bg-card border border-border-light rounded-medium outline-none font-body transition-all duration-150 ease-out focus:border-accent focus:ring-3 focus:ring-accent/8"
                       value={formData.message}
                       onChange={handleChange}
@@ -227,7 +227,7 @@ export const ContactPage: React.FC = () => {
                     className="w-full mt-2.5 !p-4"
                     icon={status === 'submitting' ? <span className="inline-block w-4 h-4 border-2 border-white/30 rounded-full border-t-white animate-spin"></span> : <Send size={16} />}
                   >
-                    {status === 'submitting' ? 'Transmitting Core Diagnostics...' : 'Submit Architecture Request'}
+                    {status === 'submitting' ? 'Submitting request...' : 'Submit Consult Request'}
                   </Button>
                 </form>
               )}
@@ -259,7 +259,7 @@ export const ContactPage: React.FC = () => {
                 {estimatorStep === 1 && (
                   <div className="animate-fade">
                     <h4 className="text-[1.15rem] font-extrabold text-text-dark mb-1">Select Your Operational Scope:</h4>
-                    <p className="text-[0.85rem] text-text-muted-dark mb-6">Choose the primary framework you want audited.</p>
+                    <p className="text-[0.85rem] text-text-muted-dark mb-6">Choose the primary framework you want analyzed.</p>
                     
                     <div className="flex flex-col gap-3">
                       <button 
@@ -305,7 +305,7 @@ export const ContactPage: React.FC = () => {
                 {estimatorStep === 2 && (
                   <div className="animate-fade">
                     <h4 className="text-[1.15rem] font-extrabold text-text-dark mb-1">Specify Operational Scale:</h4>
-                    <p className="text-[0.85rem] text-text-muted-dark mb-6">Input your nodes density and daily transaction counts.</p>
+                    <p className="text-[0.85rem] text-text-muted-dark mb-6">Input your active locations and daily transactions.</p>
 
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-3">
@@ -350,7 +350,7 @@ export const ContactPage: React.FC = () => {
                         Back
                       </button>
                       <Button onClick={() => setEstimatorStep(3)} variant="accent" icon={<ArrowRight size={14} />}>
-                        Generate Audit Scope
+                        Generate Consult Scope
                       </Button>
                     </div>
                   </div>
@@ -359,27 +359,27 @@ export const ContactPage: React.FC = () => {
                 {/* Step 3: Analysis Results */}
                 {estimatorStep === 3 && (
                   <div className="animate-fade">
-                    <h4 className="text-[1.15rem] font-extrabold text-[#10b981] mb-1">Audit Evaluation Generated</h4>
-                    <p className="text-[0.85rem] text-text-muted-dark mb-6">Recommended infrastructure target configured based on scale metrics.</p>
+                    <h4 className="text-[1.15rem] font-extrabold text-[#10b981] mb-1">Consult Evaluation Generated</h4>
+                    <p className="text-[0.85rem] text-text-muted-dark mb-6">Recommended architecture setup generated based on your metrics.</p>
 
                     <div className="bg-bg-light border border-border-light rounded-medium overflow-hidden mt-4">
                       <div className="flex justify-between items-center px-5 py-4 border-b border-border-light">
-                        <span className="text-[0.8rem] text-text-muted-dark font-semibold">Recommended Deployment</span>
+                        <span className="text-[0.8rem] text-text-muted-dark font-semibold">Recommended Setup</span>
                         <span className="font-bold text-[0.9rem] text-text-dark font-mono">{estResult.recommendedCluster}</span>
                       </div>
 
                       <div className="flex justify-between items-center px-5 py-4 border-b border-border-light">
-                        <span className="text-[0.8rem] text-text-muted-dark font-semibold">Target Database Engine</span>
+                        <span className="text-[0.8rem] text-text-muted-dark font-semibold">Recommended DB Config</span>
                         <span className="font-bold text-[0.9rem] text-text-dark font-mono">{estResult.databaseEngine}</span>
                       </div>
 
                       <div className="flex justify-between items-center px-5 py-4 border-b border-border-light">
-                        <span className="text-[0.8rem] text-text-muted-dark font-semibold">Estimated Latency Improvement</span>
+                        <span className="text-[0.8rem] text-text-muted-dark font-semibold">Estimated Efficiency Gain</span>
                         <span className="text-[#059669] font-mono text-[0.95rem] font-bold">Save ~{estResult.latencySaving}</span>
                       </div>
 
                       <div className="flex justify-between items-center px-5 py-4 border-b border-border-light">
-                        <span className="text-[0.8rem] text-text-muted-dark font-semibold">Initial Audit Scope Timeline</span>
+                        <span className="text-[0.8rem] text-text-muted-dark font-semibold">Initial Discussion Timeline</span>
                         <span className="font-bold text-[0.9rem] text-text-dark font-mono">{estResult.auditTimeline}</span>
                       </div>
 
@@ -397,7 +397,7 @@ export const ContactPage: React.FC = () => {
                         onClick={() => {
                           setFormData(prev => ({
                             ...prev,
-                            message: `Generated via Estimator Widget:\nIndustry Scope: ${estIndustry}\nActive Locations: ${estLocations}\nTransactions: ${estTransactions}\nRecommended Cluster: ${estResult.recommendedCluster}\nTarget Database: ${estResult.databaseEngine}\nEstimated Latency Saving: ~${estResult.latencySaving}\n\nPlease audit our current configuration.`
+                            message: `Generated via Estimator Widget:\nIndustry Scope: ${estIndustry}\nActive Locations: ${estLocations}\nTransactions: ${estTransactions}\nRecommended Setup: ${estResult.recommendedCluster}\nTarget Database: ${estResult.databaseEngine}\nEstimated Efficiency Gain: ~${estResult.latencySaving}\n\nPlease consult us on this configuration.`
                           }));
                           setEstimatorStep(1);
                         }} 
@@ -415,8 +415,8 @@ export const ContactPage: React.FC = () => {
             <div className="mt-6 bg-bg-card border border-border-light p-5 rounded-medium flex gap-4">
               <ShieldCheck className="text-accent shrink-0" size={24} />
               <div>
-                <h4 className="text-[0.95rem] font-[750] text-text-dark mb-1">Continuous NDA Handshakes</h4>
-                <p className="text-[0.8rem] text-text-muted-dark leading-[1.5]">All shared architecture diagrams, daily volumes, and node specs are handled in strict sandbox secrecy.</p>
+                <h4 className="text-[0.95rem] font-[750] text-text-dark mb-1">Confidentiality Assured</h4>
+                <p className="text-[0.8rem] text-text-muted-dark leading-[1.5]">We respect your privacy. Any shared specs, mockups, or project requirements will be handled securely.</p>
               </div>
             </div>
           </div>

@@ -76,14 +76,6 @@ export const Hero: React.FC = () => {
             </Link>
           </div>
 
-          {/* <div className="hero-reveal w-full border-t border-border-light pt-6 max-[900px]:flex max-[900px]:flex-col max-[900px]:items-center" style={{ transitionDelay: '0.56s' }}>
-            <p className="text-[0.67rem] font-bold uppercase text-text-muted-dark opacity-60 tracking-[2px] mb-4">Trusted by teams in hospitality, retail &amp; enterprise</p>
-            <div className="flex flex-wrap gap-[30px] items-center max-[900px]:justify-center">
-              {['HILTON', 'MARRIOTT', 'THE RITZ', 'NOBU'].map(b => (
-                <span key={b} className="font-heading font-bold text-[0.82rem] tracking-[2px] text-text-muted-dark opacity-40 transition-all duration-300 ease-out cursor-default select-none hover:text-accent hover:opacity-100">{b}</span>
-              ))}
-            </div>
-          </div> */}
         </div>
 
         {/* ── RIGHT COLUMN — Product mockup ────────────────── */}
@@ -101,7 +93,7 @@ export const Hero: React.FC = () => {
             isMockupRevealed ? 'opacity-100 scale-100' : 'opacity-0 scale-50 pointer-events-none'
           }`}>
             <div className="bg-bg-light/92 border border-border-light/90 shadow-[0_8px_24px_rgba(0,0,0,0.10)] rounded-medium p-[10px_18px] flex flex-col items-center backdrop-blur-[12px] animate-float-a">
-              <span className="font-heading text-[1.25rem] font-extrabold text-accent leading-none">120+</span>
+              <span className="font-heading text-[1.25rem] font-extrabold text-accent leading-none">12+</span>
               <span className="text-[0.64rem] font-semibold uppercase tracking-[1px] text-text-muted-dark mt-0.75 whitespace-nowrap">Projects delivered</span>
             </div>
           </div>
