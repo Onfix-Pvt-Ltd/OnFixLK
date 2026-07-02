@@ -172,8 +172,8 @@ export const Navbar: React.FC = () => {
                         <Link to="/products#pos" className="flex items-start gap-3.5 p-[10px_12px] rounded-medium mb-2 transition-all duration-150 ease-out hover:bg-accent/4">
                           <ShoppingBag size={16} className="text-accent mt-0.5" />
                           <div>
-                            <span className="block text-[0.88rem] font-bold text-text-dark">ONFIX POS Core</span>
-                            <span className="block text-[0.75rem] text-text-muted-dark mt-1 leading-[1.4]">Real-time hospitality point-of-sale database.</span>
+                            <span className="block text-[0.88rem] font-bold text-text-dark">ONFIX POS</span>
+                            <span className="block text-[0.75rem] text-text-muted-dark mt-1 leading-[1.4]">Flagship hospitality point-of-sale platform.</span>
                           </div>
                         </Link>
                         <Link to="/products#erp" className="flex items-start gap-3.5 p-[10px_12px] rounded-medium mb-2 transition-all duration-150 ease-out hover:bg-accent/4">
@@ -322,7 +322,7 @@ export const Navbar: React.FC = () => {
             </button>
             <div className={`overflow-hidden transition-[max-height] duration-350 ease-out ${activeMobileAccordion === 'products' ? 'max-h-[250px]' : 'max-h-0'}`}>
               <ul className="list-none flex flex-col gap-3 p-[4px_12px_20px_12px]">
-                <li><Link to="/products#pos" className="text-[0.95rem] font-semibold text-text-muted-dark block hover:text-accent" onClick={closeMenu}>ONFIX POS Core</Link></li>
+                <li><Link to="/products#pos" className="text-[0.95rem] font-semibold text-text-muted-dark block hover:text-accent" onClick={closeMenu}>ONFIX POS</Link></li>
                 <li><Link to="/products#erp" className="text-[0.95rem] font-semibold text-text-muted-dark block hover:text-accent" onClick={closeMenu}>Custom Enterprise ERP</Link></li>
                 <li><Link to="/products#db-core" className="text-[0.95rem] font-semibold text-text-muted-dark block hover:text-accent" onClick={closeMenu}>Onfix DB Core</Link></li>
                 <li><Link to="/products#api-hub" className="text-[0.95rem] font-semibold text-text-muted-dark block hover:text-accent" onClick={closeMenu}>Integrations &amp; API Hub</Link></li>

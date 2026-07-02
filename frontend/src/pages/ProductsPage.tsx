@@ -34,14 +34,14 @@ export const ProductsPage: React.FC = () => {
   const projects: Project[] = [
     {
       id: 'onfixpos',
-      title: 'ONFIX POS Core',
+      title: 'ONFIX POS',
       category: 'Hospitality & Dining',
-      hook: 'All-in-one ERP & POS infrastructure for serious hospitality businesses.',
-      desc: 'Engineered from the ground up to eliminate transaction latency and data fragmentation. Seamlessly synchronizes menus, inventory depletion, payroll, and property systems across multiple branches in real-time.',
+      hook: 'Our flagship all-in-one ERP & POS platform for hospitality businesses.',
+      desc: 'A comprehensive management system built to streamline restaurant and retail operations. It synchronizes menus, inventory, billing, and reporting across multiple locations in real-time on its own dedicated platform.',
       features: [
-        'End-to-end encryption and secure payment handling integrations.',
-        'Zero-friction QR tableside digital ordering queues.',
-        'Built-in multi-branch ROI calculator and FIFO recipe depletion.'
+        'Secure payment integrations and real-time sales reporting.',
+        'Tableside QR code ordering and digital menu management.',
+        'Multi-branch inventory tracking with FIFO costing.'
       ],
       url: 'https://www.onfixpos.com/',
       icon: <ShoppingBag size={24} />
