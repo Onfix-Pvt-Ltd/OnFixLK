@@ -8,11 +8,10 @@ const EARTH_CLOUD = 'https://unpkg.com/three-globe@2.31.2/example/img/earth-clou
 
 /* ─── Service nodes ─────────────────────────────────────────────── */
 const NODES = [
-  { label: 'Colombo',   lat:  6.9, lng:  79.8 },
-  { label: 'Singapore', lat:  1.3, lng: 103.8 },
-  { label: 'Tokyo',     lat: 35.7, lng: 139.7 },
-  { label: 'Frankfurt', lat: 50.1, lng:   8.7 },
-  { label: 'Dublin',    lat: 53.3, lng:  -6.3 },
+  { label: 'Sri Lanka',  lat:  7.0, lng:  80.0 },
+  { label: 'Australia',  lat: -25.3, lng: 133.8 },
+  { label: 'Russia',     lat: 55.8, lng:  37.6 },
+  { label: 'France',     lat: 48.9, lng:   2.3 },
 ];
 
 /* ─── Convert lat/lng → 3D position on unit sphere ─────────────── */

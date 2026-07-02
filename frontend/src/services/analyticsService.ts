@@ -1,8 +1,8 @@
 export interface LiveTelemetryMetrics {
-  activeTerminals: number;
-  monthlyTransactions: number;
-  serverUptime: number;
-  apiLatencyMs: number;
+  projectsDelivered: number;
+  linesOfCode: number;
+  clientSatisfaction: number;
+  onTimeDelivery: number;
 }
 
 /**
@@ -25,10 +25,10 @@ export const analyticsService = {
       console.error('[API Error] getLiveTelemetry:', error);
       // Resilient fallback to mock values so frontend dashboard continues to load
       return {
-        activeTerminals: 14820,
-        monthlyTransactions: 42918505,
-        serverUptime: 99.9997,
-        apiLatencyMs: 14,
+        projectsDelivered: 12,
+        linesOfCode: 150000,
+        clientSatisfaction: 4.9,
+        onTimeDelivery: 98,
       };
     }
   }
