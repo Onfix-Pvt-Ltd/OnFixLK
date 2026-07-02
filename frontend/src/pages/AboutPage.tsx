@@ -14,13 +14,13 @@ export const AboutPage: React.FC = () => {
   const pillars = [
     {
       icon: <Smartphone size={24} className="text-accent" />,
-      title: 'Modernizing Commerce',
-      desc: 'Equipping local dining, retail, and hospitality outlets with high-performance POS setups, custom booking tools, and digital checkouts.'
+      title: 'Modernizing Applications',
+      desc: 'Building fast, secure web portals, customer-facing systems, and interactive client interfaces for digital businesses.'
     },
     {
       icon: <Cpu size={24} className="text-accent" />,
       title: 'Automated Workflows',
-      desc: 'Putting repetitive processes on autopilot, saving hours of manual data entry and stock tracking for local operations.'
+      desc: 'Putting repetitive processes on autopilot, saving hours of manual data sync and admin work for local operations.'
     },
     {
       icon: <Monitor size={24} className="text-accent" />,
@@ -106,10 +106,10 @@ export const AboutPage: React.FC = () => {
                 Eliminating Operational Friction
               </h2>
               <p className="text-[1.05rem] leading-[1.7] text-text-muted-dark mb-6">
-                Many businesses in Sri Lanka are held back by fragmented systems and manual overhead. Important records get trapped in paper logs, isolated spreadsheets, or outdated tools—causing inventory delays, processing errors, and bookkeeping bottlenecks.
+                Many businesses in Sri Lanka are held back by fragmented systems and manual overhead. Important records get trapped in paper logs, isolated spreadsheets, or outdated tools—causing data loss, manual errors, and communication bottlenecks.
               </p>
               <p className="text-[1.05rem] leading-[1.7] text-text-muted-dark mb-6">
-                Onfix renovates these traditional workflows. We build integrated, custom software that connects your databases, online sales, SMS alerts, and payment gateways into a single secure platform. This saves operational hours and ensures you always have a single source of truth.
+                Onfix renovates these traditional workflows. We build integrated, custom software that connects your databases, customer platforms, internal APIs, and payment gateways into a single secure platform. This saves operational hours and ensures you always have a single source of truth.
               </p>
               <div className="flex gap-4 items-center">
                 <Link to="/services">
@@ -134,7 +134,7 @@ export const AboutPage: React.FC = () => {
                     <div>
                       <h4 className="font-bold text-[0.95rem] text-text-dark">Traditional Friction</h4>
                       <p className="text-[0.82rem] text-text-muted-dark mt-1 leading-[1.4]">
-                        Manual CSV exports, disconnected databases, physical stock counting, and delayed invoicing.
+                        Manual CSV exports, disconnected databases, unsynchronized spreadsheets, and delayed reporting.
                       </p>
                     </div>
                   </div>
