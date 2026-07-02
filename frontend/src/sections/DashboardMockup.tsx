@@ -337,7 +337,7 @@ export const DashboardMockup: React.FC<{ isRevealed?: boolean }> = ({ isRevealed
         <span className="w-2.5 h-2.5 rounded-full shrink-0 bg-[#ff5f57]" />
         <span className="w-2.5 h-2.5 rounded-full shrink-0 bg-[#febc2e]" />
         <span className="w-2.5 h-2.5 rounded-full shrink-0 bg-[#28c840]" />
-        <span className="ml-2.5 text-[0.7rem] text-[#9aa1ad] font-mono tracking-[0.2px]">app.onfix.lk / dashboard</span>
+        <span className="ml-2.5 text-[0.7rem] text-[#9aa1ad] font-mono tracking-[0.2px]">app.onfix.lk / {activeTab.toLowerCase().replace(/\s+/g, '-')}</span>
         <span className="ml-auto inline-flex items-center gap-1.25 text-[0.62rem] font-bold uppercase tracking-[0.6px] text-[#16a34a]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] shadow-[0_0_0_3px_rgba(34,197,94,0.18)]" /> Live
         </span>
