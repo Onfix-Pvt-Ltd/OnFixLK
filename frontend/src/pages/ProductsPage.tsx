@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 interface Project {
   id: string;
   title: string;
-  category: 'Hospitality & Dining' | 'Creative & Photography' | 'Architecture & Lifestyle';
+  category: 'Our Products' | 'Client Work' | 'Design Templates';
   hook: string;
   desc: string;
   features: string[];
@@ -22,20 +22,20 @@ interface Project {
 }
 
 export const ProductsPage: React.FC = () => {
-  const [filter, setFilter] = useState<'All' | 'Hospitality & Dining' | 'Creative & Photography' | 'Architecture & Lifestyle'>('All');
+  const [filter, setFilter] = useState<'All' | 'Our Products' | 'Client Work' | 'Design Templates'>('All');
 
   const categories = [
     { name: 'All Work', value: 'All' as const },
-    { name: 'Hospitality & Dining', value: 'Hospitality & Dining' as const },
-    { name: 'Creative & Photography', value: 'Creative & Photography' as const },
-    { name: 'Architecture & Lifestyle', value: 'Architecture & Lifestyle' as const }
+    { name: 'Our Products', value: 'Our Products' as const },
+    { name: 'Client Work', value: 'Client Work' as const },
+    { name: 'Design Templates', value: 'Design Templates' as const }
   ];
 
   const projects: Project[] = [
     {
       id: 'onfixpos',
       title: 'ONFIX POS',
-      category: 'Hospitality & Dining',
+      category: 'Our Products',
       hook: 'Our flagship all-in-one ERP & POS platform for hospitality businesses.',
       desc: 'A comprehensive management system built to streamline restaurant and retail operations. It synchronizes menus, inventory, billing, and reporting across multiple locations in real-time on its own dedicated platform.',
       features: [
@@ -47,25 +47,11 @@ export const ProductsPage: React.FC = () => {
       icon: <ShoppingBag size={24} />
     },
     {
-      id: 'verdana',
-      title: 'Verdana Resort & Spa',
-      category: 'Hospitality & Dining',
-      hook: 'An immersive, multi-venue digital gastronomy showcase for 5-star resorts.',
-      desc: 'Designed for premium travelers and gourmands. Features custom sub-menus for multi-venue resort restaurants, interactive event schedulers, and private beach dining reservation inquiries.',
-      features: [
-        'Multi-venue operational hours and availability grids.',
-        'Farm-to-table organic story cards and chef-specials guides.',
-        'Immersive parallax scroll aesthetics with luxury editorial layout.'
-      ],
-      url: 'https://serene-scroll-escapade.lovable.app/dining',
-      icon: <UtensilsCrossed size={24} />
-    },
-    {
       id: 'dreamscenario',
       title: 'DreamScenario Weddings',
-      category: 'Creative & Photography',
-      hook: 'Ethereal, light-filled wedding photography and global storytelling showcase.',
-      desc: 'Crafted for high-end wedding studios. Showcases dynamic high-performance wedding galleries, client testimonial carousels, and an automated quote calculator to drive premium conversions.',
+      category: 'Client Work',
+      hook: 'Ethereal, light-filled wedding photography and storytelling showcase.',
+      desc: 'A custom, high-performance wedding photography portal built for a premium studio. Features dynamic image portfolios, client testimonial sections, and an interactive pricing consultation engine.',
       features: [
         'Dynamic high-resolution wedding album portfolios.',
         'Interactive quote request forms and event category logs.',
@@ -75,11 +61,25 @@ export const ProductsPage: React.FC = () => {
       icon: <Camera size={24} />
     },
     {
+      id: 'verdana',
+      title: 'Verdana Resort & Spa',
+      category: 'Design Templates',
+      hook: 'An immersive, multi-venue digital gastronomy showcase template for 5-star resorts.',
+      desc: 'Designed as a premium template showcase for high-end hospitality brands. Features sub-menus for multi-venue resort restaurants, interactive event schedulers, and sandboxed dining reservation flows.',
+      features: [
+        'Multi-venue operational hours and availability grids.',
+        'Farm-to-table organic story cards and chef-specials guides.',
+        'Immersive parallax scroll aesthetics with luxury editorial layout.'
+      ],
+      url: 'https://serene-scroll-escapade.lovable.app/dining',
+      icon: <UtensilsCrossed size={24} />
+    },
+    {
       id: 'captured',
       title: 'Lensero Studios',
-      category: 'Creative & Photography',
-      hook: 'Editorial wedding and lifestyle photography capturing timeless love stories.',
-      desc: 'A sophisticated web platform prioritizing high-resolution visual storytelling. Features clean grid portfolios, custom booking consultation engines, and a responsive Instagram feed grid.',
+      category: 'Design Templates',
+      hook: 'Editorial wedding and lifestyle photography layout showcasing design assets.',
+      desc: 'A showcase template demonstrating clean grid portfolios and high-resolution visual storytelling layout optimizations. Features custom booking flows and static integrations.',
       features: [
         'Editorial structural layout grids with optimized image delivery.',
         'Live Instagram feed grid integration and social follow hooks.',
@@ -91,9 +91,9 @@ export const ProductsPage: React.FC = () => {
     {
       id: 'alaya',
       title: 'Ālaya Wellness Club',
-      category: 'Architecture & Lifestyle',
-      hook: 'A fitness and wellness club where architectural stillness meets physical strength.',
-      desc: 'Built for design-forward wellness organizations. Integrates client goal selectors, session scheduling blocks, and reservation triggers in a calm, Zen-inspired structural layout.',
+      category: 'Design Templates',
+      hook: 'A fitness and wellness club concept where stillness meets physical strength.',
+      desc: 'A beautifully styled Zen-inspired layout showing wellness scheduling features. Integrates client goal selectors, session scheduling cards, and sample reservation forms.',
       features: [
         'Goal-based session path selector (Weight Loss, Recovery, Strength).',
         'Dynamic wellness class schedules and trainer booking modules.',
@@ -105,9 +105,9 @@ export const ProductsPage: React.FC = () => {
     {
       id: 'apexfit',
       title: 'ApexFit Elite Gym',
-      category: 'Architecture & Lifestyle',
-      hook: 'A high-energy, performance-focused club platform with elite coaching.',
-      desc: 'Features interactive class timetables filtered by strength or cardio, coach profiles, progress sliders, and tiered membership tables to maximize membership sign-ups.',
+      category: 'Design Templates',
+      hook: 'A high-energy, performance-focused club platform concept.',
+      desc: 'A responsive layout concept representing class timetables, trainer profiles, before/after transformation sliders, and tiered membership options to demonstrate dashboard assets.',
       features: [
         'Filterable dynamic class timetable (Strength, Cardio, Yoga).',
         'Tiered membership table and interactive FAQ accordions.',
@@ -134,10 +134,10 @@ export const ProductsPage: React.FC = () => {
         <div className="container text-center">
           <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">OUR PORTFOLIO</span>
           <h1 className="text-[3.2rem] max-[767px]:text-[2.2rem] font-[850] mt-2.5 mb-6 bg-gradient-to-r from-white to-primary bg-clip-text text-transparent leading-[1.1] tracking-[-1.5px] max-w-[900px] mx-auto">
-            Elite Web Applications. Custom-Engineered for Maximum Speed.
+            Custom Web Applications & Portfolio Showcase
           </h1>
           <p className="max-w-[750px] mx-auto text-[1.15rem] text-text-muted-light leading-[1.7]">
-            Explore our portfolio of live client solutions. These are not concepts—they are high-performance operational systems engineered with premium branding, sub-millisecond database queries, and frictionless UX.
+            Explore our portfolio of proprietary systems, completed client websites, and template showcases. Each is built focusing on clean code structures, premium design details, and responsive UX.
           </p>
         </div>
       </section>
@@ -163,7 +163,6 @@ export const ProductsPage: React.FC = () => {
       {/* The Product Grid (The Core Content) */}
       <section className="py-20 bg-bg-light">
         <div className="container">
-          {/* Grid Layout - 3 Columns on Desktop, 1 Column on Mobile */}
           <div className="grid grid-cols-3 max-[1100px]:grid-cols-2 max-[767px]:grid-cols-1 gap-8">
             {filteredProjects.map((project, index) => (
               <ScrollReveal key={project.id} delay={100 + index * 50}>
@@ -236,21 +235,21 @@ export const ProductsPage: React.FC = () => {
               <span className="block text-[0.8rem] font-[750] tracking-[2px] text-accent mb-3 uppercase">OUR PROMISE</span>
               <h2 className="text-[2.5rem] font-heading font-bold mb-5 text-text-dark">Fully Customizable Framework Blueprints</h2>
               <p className="text-[1.12rem] text-text-muted-dark leading-[1.7] mb-8">
-                All of our products serve as solid architectural blueprints. We specialize in deep personalization—taking these core database structures, lightning-fast edge networks, and UI layouts, and redesigning them completely to match your specific branding, internal operational workflows, and feature requests.
+                All of our design templates and proprietary blueprints serve as highly optimized baseline architectures. We specialize in deep personalization—tailoring these setups, layouts, and system configurations to align exactly with your branding, workflows, and specifications.
               </p>
               <div className="flex justify-center flex-wrap gap-8 max-w-[650px] mx-auto text-left">
                 <div className="flex items-start gap-3.5 bg-bg-light border border-border-light p-4 rounded-medium flex-1 min-w-[250px]">
                   <Code className="text-accent shrink-0" size={20} />
                   <div>
                     <span className="block font-bold text-[0.95rem] text-text-dark">Sovereign Code</span>
-                    <span className="block text-[0.8rem] text-text-muted-dark mt-1">We bypass standard templates and code custom databases suited to your workflows.</span>
+                    <span className="block text-[0.8rem] text-text-muted-dark mt-1">We bypass generic templates and build structured databases suited to your workflows.</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3.5 bg-bg-light border border-border-light p-4 rounded-medium flex-1 min-w-[250px]">
                   <Share2 className="text-accent shrink-0" size={20} />
                   <div>
                     <span className="block font-bold text-[0.95rem] text-text-dark">Dynamic APIs</span>
-                    <span className="block text-[0.8rem] text-text-muted-dark mt-1">Fully connect custom backends to payment processors, inventory queues, and Xero accounts.</span>
+                    <span className="block text-[0.8rem] text-text-muted-dark mt-1">Fully connect custom backends to payment processors, inventory systems, and business tools.</span>
                   </div>
                 </div>
               </div>
